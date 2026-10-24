@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/profile.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <div class="profile-wrapper">
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <span class="profile-label">ACCOUNT SETTINGS</span>
+                    <h1>My Profile</h1>
+                    <p>View and update your personal account information.</p>
+                </div>
+
+            </div>
+
+            <!-- Profile Card -->
+            <section class="profile-card">
+
+                <div class="card-title">
+                    <div class="title-icon">
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Keep your account details up to date.</p>
+                    </div>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="profileName">
+                                <i class="fa-solid fa-user"></i>
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="profileName" placeholder="Enter your full name">
+                            </div>
+                        </div>
+
+                        <!-- Username -->
+                        <div class="form-group">
+                            <label for="profileUsername">
+                                <i class="fa-solid fa-at"></i>
+                                Username
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-at"></i>
+                                <input type="text" id="profileUsername" placeholder="Enter your username">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="profileEmail">
+                                <i class="fa-solid fa-envelope"></i>
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="profileEmail" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="profilePhone">
+                                <i class="fa-solid fa-phone"></i>
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" id="profilePhone" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <!-- Role -->
+                        <div class="form-group full-width">
+                            <label for="profileRole">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Account Role
+                            </label>
+
+                            <div class="input-wrapper readonly-input">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <input type="text" id="profileRole" readonly>
+                                <span class="verified-badge">
+                                    <i class="fa-solid fa-lock"></i>
+                                    Protected
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+
+                        <div class="notice-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h4>Account Security</h4>
+                            <p>
+                                Your account information is protected. Your role is
+                                managed by the system and cannot be changed here.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+
+                        <button type="submit" class="save-btn">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- Footer -->
+            <div class="profile-footer">
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    ATC Account
+                </span>
+
+                <span>
+                    © 2026  AGE TRANSIT COMPANY
+                </span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <<script type="module" src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

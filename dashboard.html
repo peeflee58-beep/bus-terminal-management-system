@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP HEADER ================= -->
+    <header class="top-header">
+
+        <nav class="navbar">
+
+            <div class="navbar-brand">
+                <div class="mobile-brand-icon">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+
+                <div class="user-info">
+                    <h3 id="welcomeUser"></h3>
+                    <p id="userRole"></p>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+
+                <!-- BACKUP -->
+                <div class="backup-section">
+
+                    <button id="exportDataBtn" class="header-action primary-action">
+                        <i class="fa-solid fa-file-export"></i>
+                        <span>Export Backup</span>
+                    </button>
+
+                    <input type="file" id="importBackup" accept=".json" style="display:none;">
+
+                    <button id="importDataBtn" class="header-action success-action">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Restore Backup</span>
+                    </button>
+
+                </div>
+
+
+                <!-- BOOKING -->
+                <a href="bookinghistory.html" class="header-booking">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Book</span>
+                </a>
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="notification-box">
+
+                    <button id="notificationBtn" class="notification-btn">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                        <span id="notificationCount">0</span>
+
+                    </button>
+
+                    <div id="notificationPanel" class="notification-panel">
+
+                        <div class="notification-header">
+
+                            <div>
+                                <span>ALERT CENTER</span>
+                                <h3>Notifications</h3>
+                            </div>
+
+                            <button id="clearNotificationsBtn" class="clear-notifications-btn"
+                                title="Clear notifications">
+
+                                <i class="fa-solid fa-broom"></i>
+
+                            </button>
+
+                        </div>
+
+                        <ul id="notificationList"></ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD LAYOUT ================= -->
+    <div class="dashboard-container">
+
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                     <img src="assets/images/Age.jpg" alt="ATC-LOGO"> 
+                </div>
+
+                <div class="brand-text">
+                    <h2>ATC</h2>
+                    <span>Transport Management</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <p class="sidebar-title">MAIN MENU</p>
+
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookinghistory.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-status">
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>System Online</strong>
+                        <small>All services operational</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+
+            <!-- ================= HERO HEADER ================= -->
+            <section class="dashboard-header">
+
+                <div class="header-left">
+
+                    <span class="dashboard-label">
+                        <i class="fa-solid fa-chart-line"></i>
+                        ADMIN DASHBOARD
+                    </span>
+
+                    <h1>
+                        Welcome to AGE TRANSIT COMPANY
+                        <span>Transport Management System</span>
+                    </h1>
+
+                    <p>
+                        Monitor buses, routes, schedules and bookings
+                        from one central platform.
+                    </p>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="date-display">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <div>
+                            <span>TODAY</span>
+                            <p id="newDate"></p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-profile">
+
+                        <div class="profile-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="profile-details">
+                            <strong>Admin</strong>
+                            <span>Administrator</span>
+                        </div>
+
+
+                        <!-- SETTINGS -->
+                        <button id="settingsBtn" class="settings-btn" title="Settings">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                        </button>
+
+
+                        <!-- SETTINGS PANEL -->
+                        <div id="settingsPanel" class="settings-panel">
+
+                            <div class="settings-header">
+
+                                <div>
+                                    <span>ACCOUNT</span>
+                                    <h3>Settings</h3>
+                                    <p>
+                                        Manage your account and system preferences
+                                    </p>
+                                </div>
+
+                                <i class="fa-solid fa-sliders"></i>
+
+                            </div>
+
+
+                            <!-- PROFILE -->
+                            <a href="profile.html" class="settings-item">
+
+                                <span class="settings-item-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+
+                                <span class="settings-item-text">
+                                    <strong>Profile</strong>
+                                    <small>View and manage your profile</small>
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+
+                            </a>
+
+
+                            <!-- DARK MODE -->
+                            <div class="settings-item">
+
+                                <span class="settings-item-icon">
+                                    <i class="fa-solid fa-moon"></i>
+                                </span>
+
+                                <span class="settings-item-text">
+                                    <strong>Dark Mode</strong>
+                                    <small>Switch between light and dark mode</small>
+                                </span>
+
+                                <label class="switch">
+
+                                    <input type="checkbox" id="darkModeBtn">
+
+                                    <span class="slider"></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- CHANGE PASSWORD -->
+                            <a href="change-password.html" class="settings-item">
+
+                                <span class="settings-item-icon">
+                                    <i class="fa-solid fa-key"></i>
+                                </span>
+
+                                <span class="settings-item-text">
+                                    <strong>Change Password</strong>
+                                    <small>Update your account password</small>
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+
+                            </a>
+
+
+                            <!-- ABOUT -->
+                            <a href="about.html" class="settings-item">
+
+                                <span class="settings-item-icon">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </span>
+
+                                <span class="settings-item-text">
+                                    <strong>About BTMS</strong>
+                                    <small>Learn more about the system</small>
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+
+                            </a>
+
+
+                            <div class="settings-divider"></div>
+
+
+                            <!-- LOGOUT -->
+                            <a href="#" onclick="logout(); return false;" class="settings-item logout-setting">
+
+                                <span class="settings-item-icon">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </span>
+
+                                <span class="settings-item-text">
+                                    <strong>Logout</strong>
+                                    <small>Sign out of your account</small>
+                                </span>
+
+                                <i class="fa-solid fa-chevron-right arrow-icon"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= STATISTICS ================= -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">OVERVIEW</span>
+
+                        <h2>System Statistics</h2>
+                    </div>
+
+                    <div class="dashboard-update">
+
+                        <span class="live-indicator"></span>
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <span id="dashboardLastUpdated">
+                            Last Updated: ---
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-cards">
+
+
+                    <!-- BUSES -->
+                    <div class="card statistic-card buses-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Buses</span>
+                            <p id="totalBuses">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROUTES -->
+                    <div class="card statistic-card routes-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Routes</span>
+                            <p id="totalRoutes">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- SCHEDULES -->
+                    <div class="card statistic-card schedules-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Schedules</span>
+                            <p id="totalSchedules">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOOKINGS -->
+                    <div class="card statistic-card bookings-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Bookings</span>
+                            <p id="totalBookings">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- REVENUE -->
+                    <div class="card statistic-card revenue-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Revenue</span>
+                            <p id="totalRevenue">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+                    <!-- STAFF -->
+                    <div class="card statistic-card staff-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Staff</span>
+                            <p id="totalStaff">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DRIVERS -->
+                    <div class="card statistic-card drivers-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Drivers</span>
+                            <p id="totalDrivers">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMINAL STAFF -->
+                    <div class="card statistic-card terminal-staff-card">
+
+                        <div class="statistic-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+
+                        <div class="statistic-content">
+                            <span>Total Terminal Staff</span>
+                            <p id="totalTerminalStaff">0</p>
+                        </div>
+
+                        <div class="statistic-arrow">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= BUSINESS INSIGHTS ================= -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">INSIGHTS</span>
+                        <h2>Business Overview</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="insight-grid">
+
+
+                    <div class="insight-card">
+
+                        <div class="insight-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <span>Most Popular Route</span>
+                            <h2 id="popularRoute">--</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <div class="insight-icon">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <div>
+                            <span>Bus Occupancy</span>
+                            <h2 id="occupancyRate">0%</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <div class="insight-icon">
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+                        </div>
+
+                        <div>
+                            <span>Average Fare</span>
+                            <h2 id="averageFare">₦0</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <div class="insight-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <div>
+                            <span>Today's Bookings</span>
+                            <h2 id="todayBookings">0</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ANALYTICS ================= -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">ANALYTICS</span>
+                        <h2>Transport Analytics</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="allchart-container">
+
+
+                    <!-- SCHEDULE STATUS -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>SCHEDULES</span>
+                                <h3>Schedule Status Overview</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="scheduleStatusChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOOKING STATUS -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>BOOKINGS</span>
+                                <h3>Booking Status Overview</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="bookingStatusChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- REVENUE -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>FINANCE</span>
+                                <h3>Revenue Trend</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="revenueTrendChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUS STATISTICS -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>FLEET</span>
+                                <h3>Bus Type Distribution</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-bus"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="busStatisticsChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOP ROUTES -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>ROUTES</span>
+                                <h3>Top 5 Most Booked Routes</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="topRoutesChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <!-- GENDER -->
+                    <div class="dashboard-chart">
+
+                        <div class="chart-header">
+
+                            <div>
+                                <span>PASSENGERS</span>
+                                <h3>Passenger Gender</h3>
+                            </div>
+
+                            <div class="chart-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="genderChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= COMPANY OVERVIEW ================= -->
+            <section class="dashboard-section">
+
+                <div class="card company-overview">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <div class="company-content">
+
+                        <span class="section-label">ABOUT BTMS</span>
+
+                        <h2>Company Overview</h2>
+
+                        <p>
+                            AGE TRANSIT COMPANY operates modern bus transportation
+                            services across major cities, providing passengers with
+                            reliable schedules, convenient bookings and efficient
+                            terminal management.
+                        </p>
+
+                    </div>
+
+                    <div class="company-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TODAY'S DEPARTURES ================= -->
+            <section class="dashboard-table-section">
+
+                <div class="table-section-header">
+
+                    <div>
+                        <span class="section-label">TODAY</span>
+                        <h2>Today's Departures</h2>
+                    </div>
+
+                    <div class="table-header-icon">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Bus</th>
+                                <th>Route</th>
+                                <th>Departure</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="todayDeparturesBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= UPCOMING DEPARTURES ================= -->
+            <section class="dashboard-table-section">
+
+                <div class="table-section-header">
+
+                    <div>
+                        <span class="section-label">UPCOMING</span>
+                        <h2>Upcoming Departures</h2>
+                    </div>
+
+                    <div class="table-header-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Bus</th>
+                                <th>Route</th>
+                                <th>Departure</th>
+                                <th>Time Left</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="upcomingDeparturesBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TOP ROUTES ================= -->
+            <section class="dashboard-table-section">
+
+                <div class="table-section-header">
+
+                    <div>
+                        <span class="section-label">PERFORMANCE</span>
+                        <h2>Top Routes</h2>
+                    </div>
+
+                    <div class="table-header-icon">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Route</th>
+                                <th>Bookings</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="topRoutesTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RECENT ACTIVITIES ================= -->
+            <section class="dashboard-table-section">
+
+                <div class="table-section-header">
+
+                    <div>
+                        <span class="section-label">ACTIVITY</span>
+                        <h2>Recent Activities</h2>
+                    </div>
+
+                    <div class="table-header-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Day(s)</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentActivities"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="dashboard-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <strong>
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                    
+                </strong>
+
+                <span>
+                    
+                    Bus Terminal Management System
+                </span>
+            </div>
+
+            <p>
+                &copy; 2026  AGE TRANSIT COMPANY
+            </p>
+
+        </div>
+
+    </footer>
+<!-- ================= JAVASCRIPT ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <!-- Add your modular script file here -->
+    <script type="module" src="js/script.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/ticket.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div class="brand-text">
+                    <h2>ATC</h2>
+                    <span>Terminal Management</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-section-title">
+                MANAGEMENT
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-section-title operations">
+                OPERATIONS
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="ticket.html" class="active">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div class="page-heading">
+
+                    <div class="page-icon">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="breadcrumb">
+                            Operations / Tickets
+                        </span>
+
+                        <h1>Ticket Management</h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="admin-details">
+
+                        <strong>Admin</strong>
+
+                        <span>
+                            System Administrator
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= HERO ================= -->
+            <section class="ticket-banner">
+
+                <div class="banner-content">
+
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="banner-label">
+                            PASSENGER TICKETING
+                        </span>
+
+                        <h2>Generate Official Passenger Tickets</h2>
+
+                        <p>
+                            Select a booking and generate an official
+                            AGE TRANSIT COMPANY passenger ticket.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="banner-decoration">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+            </section>
+
+
+            <!-- ================= TICKET GENERATOR ================= -->
+            <section class="generator-card">
+
+                <div class="generator-header">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-ticket-simple"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                TICKET GENERATOR
+                            </span>
+
+                            <h2>Generate Passenger Ticket</h2>
+
+                            <p>
+                                Select a booking reference to prepare the
+                                passenger ticket.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="secure-badge">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Secure Ticketing
+
+                    </div>
+
+                </div>
+
+
+                <div class="generator-body">
+
+                    <div class="booking-input">
+
+                        <label for="ticketBooking">
+                            <i class="fa-solid fa-receipt"></i>
+                            Booking Reference
+                        </label>
+
+                       <div class="booking-field" style="position: relative;">
+    <i class="fa-solid fa-ticket" style="position: absolute; left: 15px; z-index: 2;"></i>
+    <select id="ticketBooking" class="form-control" style="width: 100%; padding-left: 40px; background: transparent; border: none; outline: none; font-weight: 600; cursor: pointer;">
+        <option value="">Select a booking reference...</option>
+    </select>
+</div>
+
+                    </div>
+
+
+                    <div class="generator-actions">
+
+                        <button id="generateTicket" class="generate-btn">
+                            <i class="fa-solid fa-ticket"></i>
+                            Generate Ticket
+                        </button>
+
+                        <button onclick="goBack()" class="back-btn">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TICKET AREA ================= -->
+            <section class="ticket-section">
+
+                <div class="ticket-section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            OFFICIAL TRAVEL DOCUMENT
+                        </span>
+
+                        <h2>Passenger Ticket</h2>
+
+                    </div>
+
+                    <div class="ticket-status-label">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Official Ticket
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= OFFICIAL TICKET ================= -->
+                <div id="ticketCard" class="ticket-card">
+
+                    <!-- Ticket Header -->
+                    <div class="ticket-header">
+
+                        <div class="company-brand">
+
+                            <div class="company-logo">
+                                <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    AGE TRANSIT COMPANY
+                                </h2>
+
+                                <span>
+                                    OFFICIAL PASSENGER TICKET
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="ticket-mark">
+
+                            <i class="fa-solid fa-ticket"></i>
+
+                            <span>
+                                TRAVEL PASS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-divider">
+                        <span></span>
+                        <i class="fa-solid fa-circle"></i>
+                        <span></span>
+                    </div>
+
+
+                    <!-- Ticket Reference -->
+                    <div class="ticket-reference">
+
+                        <div>
+
+                            <span>
+                                BOOKING ID
+                            </span>
+
+                            <strong id="ticketBookingId"></strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                TICKET NO.
+                            </span>
+
+                            <strong id="ticketNumber"></strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Passenger Information -->
+                    <div class="ticket-block">
+
+                        <div class="block-heading">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <span>
+                                PASSENGER INFORMATION
+                            </span>
+
+                        </div>
+
+
+                        <div class="ticket-grid">
+
+                            <div class="ticket-field">
+
+                                <label>Passenger Name</label>
+
+                                <strong id="ticketPassenger"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>Gender</label>
+
+                                <strong id="ticketPassengerGender"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>Passenger Phone</label>
+
+                                <strong id="ticketPassengerPhone"></strong>
+
+                            </div>
+
+                            <div class="ticket-field">
+
+                                <label>Number of Kids</label>
+
+                                <strong id="ticketKidCount"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>Passenger Email</label>
+
+                                <strong id="ticketPassengerEmail"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>State</label>
+
+                                <strong id="passengerState"></strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sponsor Information -->
+                    <div class="ticket-block">
+
+                        <div class="block-heading">
+
+                            <i class="fa-solid fa-user-tie"></i>
+
+                            <span>
+                                SPONSOR INFORMATION
+                            </span>
+
+                        </div>
+
+
+                        <div class="ticket-grid">
+
+                            <div class="ticket-field">
+
+                                <label>Sponsor Name</label>
+
+                                <strong id="ticketSponsor"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>Sponsor Phone</label>
+
+                                <strong id="ticketSponsorPhone"></strong>
+
+                            </div>
+
+
+                            <div class="ticket-field">
+
+                                <label>Sponsor Email</label>
+
+                                <strong id="ticketSponsorEmail"></strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Journey Information -->
+                    <div class="journey-card">
+
+                        <div class="block-heading">
+
+                            <i class="fa-solid fa-route"></i>
+
+                            <span>
+                                JOURNEY INFORMATION
+                            </span>
+
+                        </div>
+
+
+                        <div class="journey-grid">
+
+                            <div class="journey-field">
+
+                                <span>BUS</span>
+
+                                <strong id="ticketBus"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>ROUTE</span>
+
+                                <strong id="ticketRoute"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>SEAT</span>
+
+                                <strong id="ticketSeat"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>TICKET TYPE</span>
+
+                                <strong id="passengerTicketType"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>DEPARTURE DATE</span>
+
+                                <strong id="ticketDepartureDate"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>DEPARTURE TIME</span>
+
+                                <strong id="ticketdepartureTime"></strong>
+
+                            </div>
+
+
+                            <div class="journey-field">
+
+                                <span>DRIVER</span>
+
+                                <strong id="ticketDriverName"></strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Payment -->
+                    <div class="payment-section">
+
+                        <div class="payment-field">
+
+                            <span>
+                                PAYMENT METHOD
+                            </span>
+
+                            <strong id="ticketPaymentMethod"></strong>
+
+                        </div>
+
+
+                        <div class="payment-field">
+
+                            <span>
+                                PAYMENT STATUS
+                            </span>
+
+                            <strong id="ticketPaymentStatus" class="payment-status"></strong>
+
+                        </div>
+
+
+                        <div class="payment-field">
+
+                            <span>
+                                FARE
+                            </span>
+
+                            <strong id="ticketFare" class="fare-value"></strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Booking Date -->
+                    <div class="booked-date">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        <span>
+                            Booked Date:
+                        </span>
+
+                        <strong id="ticketDate"></strong>
+
+                    </div>
+
+
+                    <!-- Ticket Footer -->
+                    <div class="receipt-footer">
+
+                        <div class="footer-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <p>
+                                <strong>
+                                    Thank you for choosing
+                                    AGE TRANSIT COMPANY.
+                                </strong>
+                            </p>
+
+                            <p>
+                                We sincerely appreciate your patronage
+                                and look forward to serving you again.
+                            </p>
+
+                            <p>
+                                Please keep this ticket as proof of
+                                payment and present it when required.
+                            </p>
+
+                            <p>
+                                We wish you a safe and pleasant journey.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer-service">
+
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+
+                            <span>
+                                Customer Services:
+                            </span>
+
+                            <strong>
+                                09133553124
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <span>
+                                Email:
+                            </span>
+
+                            <strong>
+                                agetransit001info@gmail.com
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-final-message">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        Thank you for your patronage
+
+                    </div>
+
+
+                    <!-- Existing print function -->
+                    <button onclick="printTicket()" class="print-ticket-btn">
+                        <i class="fa-solid fa-print"></i>
+                        Print Ticket
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY Transportation Services.
+            All Rights Reserved
+        </p>
+
+    </footer>
+
+<script type="module" src="js/script.js"></script>
+</body>
+
+</html>

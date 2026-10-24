@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/routes.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             SIDEBAR
+             ========================================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <h2>ATC</h2>
+                    <span>Management System</span>
+                </div>
+
+            </div>
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html" class="active">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+             ========================================= -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="dashboard-header">
+
+                <div class="header-title">
+
+                    <span class="page-label">
+                        TRANSPORTATION MANAGEMENT
+                    </span>
+
+                    <h1>Route Management</h1>
+
+                    <p>
+                        Create, manage and monitor bus transportation routes.
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>System Manager</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================================
+                 ROUTE OVERVIEW
+                 ========================================= -->
+            <section class="route-overview">
+
+                <div class="overview-content">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <div>
+                        <span>ROUTE NETWORK</span>
+                        <h2>Transportation Routes</h2>
+                        <p>
+                            Manage destinations, origins, bus assignments
+                            and ticket fares from one place.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="route-total">
+
+                    <span>Total Routes</span>
+
+                    <strong id="totalRoutes">0</strong>
+
+                    <small>
+                        Registered routes
+                    </small>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 ADD ROUTE
+                 ========================================= -->
+            <section class="form-card">
+
+                <div class="form-heading">
+
+                    <div class="form-heading-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <div>
+                        <h2>Add New Route</h2>
+                        <p>
+                            Enter the details below to register a new
+                            transportation route.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form action="" id="routeForm">
+
+                    <!-- State -->
+                    <div class="input-group">
+
+                        <label for="routeState">
+                            <i class="fa-solid fa-location-dot"></i>
+                            State
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-map"></i>
+
+                            <select id="routeState" required>
+
+                                <option value="">
+                                    Select State
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Route Name -->
+                    <div class="input-group">
+
+                        <label for="routeName">
+                            <i class="fa-solid fa-road"></i>
+                            Route Name
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-route"></i>
+
+                            <input type="text"
+                                id="routeName"
+                                placeholder="Enter route name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Origin -->
+                    <div class="input-group">
+
+                        <label for="origin">
+                            <i class="fa-solid fa-location-arrow"></i>
+                            Origin
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-circle-dot"></i>
+
+                            <input type="text"
+                                id="origin"
+                                placeholder="Starting location"
+                                required readonly>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Destination -->
+                    <div class="input-group">
+
+                        <label for="destination">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            Destination
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-flag-checkered"></i>
+
+                            <input type="text"
+                                id="destination"
+                                placeholder="Destination"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Bus -->
+                    <div class="input-group">
+
+                        <label for="routeBusType">
+                            <i class="fa-solid fa-bus"></i>
+                            Bus
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-bus-simple"></i>
+
+                            <select id="routeBusType" required>
+
+                                <option value="">
+                                    Select Bus
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Fare -->
+                    <div class="input-group">
+
+                        <label for="routeFare">
+                            <i class="fa-solid fa-naira-sign"></i>
+                            Ticket Fare
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                            <input type="number"
+                                id="routeFare"
+                                placeholder="Enter Fare"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <div class="form-submit">
+
+                        <button type="submit">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Route
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =========================================
+                 ROUTE DIRECTORY
+                 ========================================= -->
+            <section class="route-directory">
+
+                <div class="directory-header">
+
+                    <div>
+
+                        <span class="directory-label">
+                            ROUTE DIRECTORY
+                        </span>
+
+                        <h2>Available Routes</h2>
+
+                        <p>
+                            View and manage all registered transportation routes.
+                        </p>
+
+                    </div>
+
+                    <div class="directory-icon">
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="search-container">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text"
+                        id="searchRoute"
+                        placeholder="Search route, origin, destination or bus...">
+
+                </div>
+
+
+                <!-- Table -->
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>State</th>
+
+                                <th>Route Name</th>
+
+                                <th>Origin</th>
+
+                                <th>Destination</th>
+
+                                <th>Bus Type</th>
+
+                                <th>Ticket Price</th>
+
+                                <th>Date / Time</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="routeTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 FOOTER NOTE
+                 ========================================= -->
+            <div class="page-note">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Route information is used by the scheduling and
+                    passenger booking modules.
+                </span>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY
+        </p>
+    </footer>
+
+<script type="module" src="js/script.js"></script>
+</body>
+
+</html>

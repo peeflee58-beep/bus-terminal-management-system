@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/staff.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div class="brand-text">
+                    <h2>ATC</h2>
+                    <span>Terminal Management</span>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-section-title">
+                MANAGEMENT
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html" class="active">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-section-title operations">
+                OPERATIONS
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div class="page-heading">
+
+                    <div class="page-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span class="breadcrumb">
+                            Management / Staffs
+                        </span>
+
+                        <h1>Staff Management</h1>
+                    </div>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="admin-details">
+                        <strong>Admin</strong>
+                        <span>System Administrator</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= HERO ================= -->
+            <section class="staff-banner">
+
+                <div class="banner-content">
+
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="banner-label">
+                            HUMAN RESOURCE MANAGEMENT
+                        </span>
+
+                        <h2>Manage Your Terminal Team</h2>
+
+                        <p>
+                            Add, assign and monitor staff members responsible
+                            for daily terminal operations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="banner-decoration">
+                    <i class="fa-solid fa-users-gear"></i>
+                </div>
+
+            </section>
+
+            <!-- ================= STAFF OVERVIEW ================= -->
+            <section class="overview-grid">
+
+                <!-- TOTAL STAFF -->
+                <div class="staff-total-card">
+
+                    <div class="total-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="total-content">
+
+                        <span>Total Staff</span>
+
+                        <strong id="totalStaff">0</strong>
+
+                        <small>
+                            <i class="fa-solid fa-circle-check"></i>
+                            All registered personnel
+                        </small>
+
+                    </div>
+
+                    <div class="total-decoration">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- TERMINAL STAFF -->
+                <div class="staff-total-card terminal-staff-card">
+
+                    <div class="total-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div class="total-content">
+
+                        <span>Terminal Staff</span>
+
+                        <strong id="totalTerminalStaff">0</strong>
+
+                        <small>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Registered terminal personnel
+                        </small>
+
+                    </div>
+
+                    <div class="total-decoration">
+                        <i class="fa-solid fa-building-user"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- DRIVERS -->
+                <div class="staff-total-card driver-staff-card">
+
+                    <div class="total-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div class="total-content">
+
+                        <span>Total Drivers</span>
+
+                        <strong id="totalDrivers">0</strong>
+
+                        <small>
+                            <i class="fa-solid fa-bus"></i>
+                            Registered bus drivers
+                        </small>
+
+                    </div>
+
+                    <div class="total-decoration">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD STAFF ================= -->
+            <section class="form-card">
+
+                <div class="section-header">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                PERSONNEL SETUP
+                            </span>
+
+                            <h2>Add New Staff</h2>
+
+                            <p>
+                                Register a new member of the terminal team.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-status">
+                        <i class="fa-solid fa-circle"></i>
+                        Staff Module
+                    </div>
+
+                </div>
+
+
+                <form action="" id="staffForm">
+
+                    <div class="form-grid">
+
+                        <!-- Staff Name -->
+                        <div class="input-group">
+
+                            <label for="staffName">
+                                <i class="fa-solid fa-user"></i>
+                                Staff Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input type="text" id="staffName" placeholder="Enter staff name">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Role -->
+                        <div class="input-group">
+
+                            <label for="staffRole">
+                                <i class="fa-solid fa-user-tie"></i>
+                                Staff Role
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-briefcase"></i>
+                                <select id="staffRole" required>
+
+                                    <option value="">
+                                        Select Role
+                                    </option>
+
+                                    <option value="Cashier">
+                                        Cashier
+                                    </option>
+
+                                    <option value="Terminal Officer">
+                                        Terminal Officer
+                                    </option>
+
+                                    <option value="Manager">
+                                        Manager
+                                    </option>
+
+                                    <option value="Security">
+                                        Security
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Gender -->
+                        <div class="input-group">
+
+                            <label for="staffGender">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                Gender
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-venus-mars"></i>
+
+                                <select id="staffGender" required>
+
+                                    <option value="">
+                                        Select Gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <!-- Assigned State / Terminal -->
+                        <div class="input-group">
+
+                            <label for="staffState">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Assigned State / Terminal
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <select id="staffState" required>
+
+                                    <option value="">
+                                        Select State / Terminal
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div class="input-group">
+
+                            <label for="staffPhone">
+                                <i class="fa-solid fa-phone"></i>
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input type="tel" id="staffPhone" placeholder="Enter phone number" required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Staff Username -->
+                    <div class="input-group">
+
+                        <label for="staffUsername">
+                            <i class="fa-solid fa-user-lock"></i>
+                            Login Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user-lock"></i>
+
+                            <input type="text" id="staffUsername" placeholder="Create login username" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Staff Password -->
+                    <div class="input-group">
+
+                        <label for="staffPassword">
+                            <i class="fa-solid fa-lock"></i>
+                            Login Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input type="password" id="staffPassword" placeholder="Create login password" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="input-group">
+
+                        <label for="staffConfirmPassword">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Confirm Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <input type="password" id="staffConfirmPassword" placeholder="Confirm login password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-footer">
+
+                        <div class="form-note">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                Staff login credentials are created by the administrator.
+                            </span>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                            Add Staff
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- ================= ADD DRIVER ================= -->
+            <section class="form-card">
+
+                <div class="section-header">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                DRIVER MANAGEMENT
+                            </span>
+
+                            <h2>Add New Driver</h2>
+
+                            <p>
+                                Register and assign a driver to an available bus.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="module-status">
+                        <i class="fa-solid fa-circle"></i>
+                        Driver Module
+                    </div>
+
+                </div>
+
+
+                <form action="" id="driverForm">
+
+                    <div class="form-grid">
+
+                        <!-- Driver Name -->
+                        <div class="input-group">
+
+                            <label for="driverName">
+                                <i class="fa-solid fa-user"></i>
+                                Driver Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input type="text" id="driverName" placeholder="Enter driver name" required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Gender -->
+                        <div class="input-group">
+
+                            <label for="driverGender">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                Gender
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-venus-mars"></i>
+
+                                <select id="driverGender" required>
+
+                                    <option value="">
+                                        Select Gender
+                                    </option>
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Bus Assignment -->
+                        <div class="input-group">
+
+                            <label for="driverBusNumber">
+                                <i class="fa-solid fa-bus"></i>
+                                Bus Assignment
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-bus-simple"></i>
+
+                                <select id="driverBusNumber" required>
+
+                                    <option value="">
+                                        Select Bus
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div class="input-group">
+
+                            <label for="driverPhone">
+                                <i class="fa-solid fa-phone"></i>
+                                Phone Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input type="tel" id="driverPhone" placeholder="Enter phone number" required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-footer">
+
+                        <div class="form-note">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                Each driver can be assigned to only one bus.
+                            </span>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+
+                            <i class="fa-solid fa-user-plus"></i>
+
+                            Add Driver
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= STAFF DIRECTORY ================= -->
+            <section class="staff-directory">
+
+                <div class="directory-header">
+
+                    <div class="directory-title">
+
+                        <div class="directory-icon">
+                            <i class="fa-solid fa-address-book"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                TERMINAL STAFF DIRECTORY
+                            </span>
+
+                            <h2>Terminal Staff</h2>
+
+                            <p>
+                                View and manage registered terminal personnel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="directory-badge">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Personnel Records
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="table-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchStaff" placeholder="Search staff, role or phone...">
+
+                    </div>
+
+
+                    <div class="toolbar-info">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                        Staff Management
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Staff ID</th>
+
+                                <th>Name</th>
+
+                                <th>Role</th>
+
+                                <th>Job Position</th>
+
+                                <th>Gender</th>
+
+                                <th>Assigned State</th>
+
+                                <th>Phone</th>
+
+                                <th>Date/Time</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="staffTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="table-footer">
+
+                    <span>
+                        <i class="fa-solid fa-circle-info"></i>
+                        Staff records are managed through the BTMS system.
+                    </span>
+
+                    <strong>
+                        BTMS Personnel Management
+                    </strong>
+
+                </div>
+
+            </section>
+
+            <!-- ================= DRIVER DIRECTORY ================= -->
+            <section class="staff-directory driver-directory">
+
+                <div class="directory-header">
+
+                    <div class="directory-title">
+
+                        <div class="directory-icon">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                DRIVER DIRECTORY
+                            </span>
+
+                            <h2>Available Drivers</h2>
+
+                            <p>
+                                View and manage registered bus drivers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="directory-badge">
+
+                        <i class="fa-solid fa-bus"></i>
+
+                        Driver Records
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="table-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchDriver" placeholder="Search driver or bus...">
+
+                    </div>
+
+
+                    <div class="toolbar-info">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        Driver Management
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Driver ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Assigned Bus</th>
+                                <th>Phone</th>
+                                <th>Date/Time</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="driverTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="table-footer">
+
+                    <span>
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        Each driver is assigned to a specific bus.
+
+                    </span>
+
+
+                    <strong>
+                        BTMS Driver Management
+                    </strong>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY
+            <span>•</span>
+            Staff Management
+        </p>
+
+    </footer>
+
+
+    <!-- EXISTING JAVASCRIPT -->
+
+<script type="module" src="js/script.js"></script>
+</body>
+
+</html>

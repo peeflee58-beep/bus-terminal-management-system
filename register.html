@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/register.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <div class="register-container">
+
+            <!-- =====================================
+                 LEFT BRANDING PANEL
+                 ===================================== -->
+            <section class="register-info">
+
+                <div class="register-slider">
+
+                    <img src="assets/images/1da2b22c11b87390487feafb9fa67d96.jpg"
+                        class="slide">
+
+                    <img src="assets/images/7ff9880b1ad9230f37affa3649f244b1.jpg"
+                        class="slide">
+
+                    <img src="assets/images/c888ba6aa3fb91a79b6e4290f8f6ca44.jpg"
+                        class="slide">
+
+                    <img src="assets/images/7ff9880b1ad9230f37affa3649f244b1.jpg"
+                        class="slide">
+
+                </div>
+
+                <div class="register-overlay"></div>
+
+                <div class="brand-content">
+
+                    <div class="brand-logo">
+                        <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                    </div>
+
+                    <span class="brand-tag">
+                        ATC
+                    </span>
+
+                    <h1>
+                        Welcome to the
+                        <span>Age Transit</span>
+                        Company
+                    </h1>
+
+                    <p>
+                        Create your account and enjoy a convenient,
+                        organized and reliable bus transportation experience.
+                    </p>
+
+                    <div class="feature-list">
+
+                        <div class="feature-item">
+                            <i class="fa-solid fa-ticket"></i>
+                            <span>Easy Ticket Booking</span>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>View Available Schedules</span>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Secure Account Access</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="slide-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 RIGHT REGISTER PANEL
+                 ===================================== -->
+            <section class="register-form-container">
+
+                <div class="register-form-wrapper">
+
+                    <div class="mobile-brand">
+                        <div class="mobile-logo">
+                            <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                        </div>
+
+                        <span>ATC</span>
+                    </div>
+
+                    <div class="form-heading">
+
+                        <span class="welcome-text">
+                            GET STARTED
+                        </span>
+
+                        <h2>Create Account</h2>
+
+                        <p>
+                            Fill in your details to create your BTMS account.
+                        </p>
+
+                    </div>
+
+
+                    <form class="register-form" id="registerForm">
+
+                        <!-- Full Name -->
+                        <div class="input-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-user"></i>
+
+                                <input type="text"
+                                    id="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input type="email"
+                                    id="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Username -->
+                        <div class="input-group">
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-at"></i>
+
+                                <input type="text"
+                                    id="username"
+                                    placeholder="Choose a username"
+                                    autocomplete="username"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="input-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input type="password"
+                                    id="password"
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="password-toggle"
+                                    data-target="password"
+                                    aria-label="Show password">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Confirm Password -->
+                        <div class="input-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="password-toggle"
+                                    data-target="confirmPassword"
+                                    aria-label="Show password">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Security Note -->
+                        <div class="security-note">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <span>
+                                Your account information will be securely
+                                stored and used to provide access to BTMS services.
+                            </span>
+
+                        </div>
+
+
+                        <!-- Submit -->
+                        <button type="submit" class="create-account-btn">
+
+                            <span>Create Account</span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <!-- Login -->
+                        <p class="login-link">
+
+                            Already have an account?
+
+                            <a href="login.html">
+                                Login
+                            </a>
+
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2026  AGE TRANSIT COMPANY
+            <span>•</span>
+            Secure Transportation Management
+        </p>
+    </footer>
+
+
+    <script src="js/slide.js"></script>
+   
+    <script src="js/darkmode.js"></script>
+<script type="module" src="js/register.js"></script>
+
+    <!-- Password Visibility -->
+    <script>
+        document.querySelectorAll(".password-toggle").forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const targetId = this.dataset.target;
+                const input = document.getElementById(targetId);
+                const icon = this.querySelector("i");
+
+                if (input.type === "password") {
+
+                    input.type = "text";
+
+                    icon.classList.remove("fa-eye");
+                    icon.classList.add("fa-eye-slash");
+
+                } else {
+
+                    input.type = "password";
+
+                    icon.classList.remove("fa-eye-slash");
+                    icon.classList.add("fa-eye");
+
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

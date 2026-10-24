@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <!-- Page-specific stylesheet -->
+    <link rel="stylesheet" href="css/about.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <img src="assets/images/Age.jpg" alt="ATC Logo">
+                </div>
+
+                <div>
+                    <h2>ATC</h2>
+                    <span>Terminal Management</span>
+                </div>
+            </div>
+
+            <div class="sidebar-label">
+                MAIN MENU
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-label">
+                    ACCOUNT
+                </div>
+
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="page-header">
+
+                <div class="header-title">
+
+                    <div class="header-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <div>
+                        <span class="breadcrumb">System / Information</span>
+                        <h1>About System</h1>
+                    </div>
+
+                </div>
+
+                <div class="admin-profile">
+
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="profile-details">
+                        <strong>Administrator</strong>
+                        <span>System Admin</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= HERO ================= -->
+            <section class="about-hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Official System Information
+                    </div>
+
+                    <h2>
+                        Bus Terminal
+                        <span>Management System</span>
+                    </h2>
+
+                    <p>
+                        A modern digital platform designed to simplify,
+                        organize and automate bus terminal operations.
+                    </p>
+
+                    <div class="version-badge">
+                        <i class="fa-solid fa-code-branch"></i>
+                        Version 1.0
+                    </div>
+
+                </div>
+
+                <div class="hero-illustration">
+
+                    <div class="bus-circle">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                    <div class="floating-card card-one">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Schedules</span>
+                    </div>
+
+                    <div class="floating-card card-three">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Reports</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SYSTEM INFORMATION ================= -->
+            <section class="section-block">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">SYSTEM PROFILE</span>
+                        <h2>System Information</h2>
+                    </div>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                </div>
+
+
+                <div class="info-grid">
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+
+                        <div>
+                            <span>Project Topic</span>
+                            <strong>Implementation of Bus Terminal Management System</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <div>
+                            <span>Institution</span>
+                            <strong>University of Nigeria, Nsukka (UNN)</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <span>Department</span>
+                            <strong>Computer Science</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div>
+                            <span>Technology Stack</span>
+                            <strong>HTML, CSS, JavaScript, Local Storage & Firebase</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DEVELOPERS ================= -->
+            <section class="section-block">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">DEVELOPMENT TEAM</span>
+                        <h2>Developed By</h2>
+                    </div>
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div class="developers-grid">
+
+                    <div class="developer-card">
+
+                        <div class="developer-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Omeje Emmanuel Onyebuchi</h3>
+                            <span>Development Team</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="developer-card">
+
+                        <div class="developer-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Omeje Anthony Obinna</h3>
+                            <span>Development Team</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="developer-card">
+
+                        <div class="developer-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Omeke Gloria Chiamaka</h3>
+                            <span>Development Team</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DESCRIPTION ================= -->
+            <section class="description-card">
+
+                <div class="description-icon">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                </div>
+
+                <div>
+
+                    <span class="section-label">ABOUT THE PLATFORM</span>
+
+                    <h2>System Description</h2>
+
+                    <p>
+                        The Bus Terminal Management System is a web-based
+                        application developed to automate the daily activities
+                        of a bus terminal. It simplifies bus management, route
+                        planning, scheduling, passenger booking, ticket
+                        generation, reporting and revenue monitoring.
+                    </p>
+
+                    <p>
+                        The system is designed to improve operational
+                        efficiency, minimize manual errors and provide a
+                        better experience for both terminal staff and
+                        passengers through centralized digital management.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FEATURES ================= -->
+            <section class="section-block">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">SYSTEM CAPABILITIES</span>
+                        <h2>Key Features</h2>
+                    </div>
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <h3>Bus Management</h3>
+                        <p>Manage buses, capacities and bus information.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <h3>Route Management</h3>
+                        <p>Create and manage terminal routes and fares.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <h3>Schedule Management</h3>
+                        <p>Organize departure schedules and trip status.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <h3>Passenger Booking</h3>
+                        <p>Manage passenger reservations and bookings.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-ticket-simple"></i>
+                        </div>
+                        <h3>Ticket Generation</h3>
+                        <p>Generate professional passenger travel tickets.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3>Email Ticket</h3>
+                        <p>Support electronic delivery of passenger tickets.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <h3>Revenue Reports</h3>
+                        <p>Monitor bookings, payments and revenue records.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3>Dashboard Analytics</h3>
+                        <p>View important terminal statistics at a glance.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+                        <h3>Notification Center</h3>
+                        <p>Keep users informed about important activities.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3>Backup & Restore</h3>
+                        <p>Support system data backup and restoration.</p>
+                    </div>
+
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                        <h3>Dark Mode</h3>
+                        <p>Provides an alternative interface appearance.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SYSTEM VALUES ================= -->
+            <section class="values-grid">
+
+                <div class="value-card">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div>
+                        <h3>Efficiency</h3>
+                        <p>Streamlined terminal operations.</p>
+                    </div>
+                </div>
+
+
+                <div class="value-card">
+                    <i class="fa-solid fa-lock"></i>
+                    <div>
+                        <h3>Security</h3>
+                        <p>Controlled access to system functions.</p>
+                    </div>
+                </div>
+
+
+                <div class="value-card">
+                    <i class="fa-solid fa-users"></i>
+                    <div>
+                        <h3>User Friendly</h3>
+                        <p>Designed for staff and passengers.</p>
+                    </div>
+                </div>
+
+
+                <div class="value-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <h3>Better Management</h3>
+                        <p>Centralized operational information.</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ================= COPYRIGHT ================= -->
+            <div class="system-footer">
+
+                <div class="footer-line"></div>
+
+                <img src="assets/images/Age.jpg" alt="ATC-LOGO">
+
+                <p>
+                    © 2026 Bus Terminal Management System
+                </p>
+
+                <span>
+                    All Rights Reserved
+                </span>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY
+        </p>
+    </footer>
+
+
+    <!-- Existing Scripts -->
+   <script type="module" src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

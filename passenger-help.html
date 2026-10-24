@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/passenger-help.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <strong>ATC</strong>
+                    <span>Passenger Portal</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-label">
+                PASSENGER MENU
+            </div>
+
+            <ul class="sidebar-nav">
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>My Bookings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-spacer"></div>
+
+            <ul class="sidebar-bottom">
+
+                <li>
+                    <a href="about.html" class="active">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Help & FAQ</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-status">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Passenger Portal</strong>
+                    <span>Secure Access</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        <i class="fa-solid fa-circle-info"></i>
+                        PASSENGER SUPPORT
+                    </span>
+
+                    <h1>Help & Frequently Asked Questions</h1>
+
+                    <p>
+                        Find answers and learn how to use the ATC
+                        passenger booking system.
+                    </p>
+
+                </div>
+
+                <div class="header-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+            </header>
+
+
+            <!-- =========================================
+                 WELCOME BANNER
+            ========================================== -->
+            <section class="welcome-banner">
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+                <div class="welcome-content">
+
+                    <span>ATC PASSENGER GUIDE</span>
+
+                    <h2>
+                        We're here to help you travel with ease.
+                    </h2>
+
+                    <p>
+                        Learn how to create your account, book a ticket,
+                        select a seat and access your ticket after booking.
+                    </p>
+
+                </div>
+
+                <div class="welcome-decoration">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 QUICK HELP
+            ========================================== -->
+            <section class="quick-help">
+
+                <div class="help-card">
+
+                    <div class="help-icon blue">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div>
+                        <strong>Registration</strong>
+                        <span>Create your passenger account.</span>
+                    </div>
+
+                </div>
+
+                <div class="help-card">
+
+                    <div class="help-icon gold">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <div>
+                        <strong>Book a Ticket</strong>
+                        <span>Reserve your preferred trip.</span>
+                    </div>
+
+                </div>
+
+                <div class="help-card">
+
+                    <div class="help-icon green">
+                        <i class="fa-solid fa-chair"></i>
+                    </div>
+
+                    <div>
+                        <strong>Choose a Seat</strong>
+                        <span>Select an available seat.</span>
+                    </div>
+
+                </div>
+
+                <div class="help-card">
+
+                    <div class="help-icon purple">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <strong>Receive Ticket</strong>
+                        <span>Print or email your ticket.</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 PASSENGER GUIDE
+            ========================================== -->
+            <section class="guide-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <span>STEP-BY-STEP GUIDE</span>
+                        <h2>How to Use ATC</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- Registration -->
+                <div class="guide-section">
+
+                    <div class="guide-number">
+                        01
+                    </div>
+
+                    <div class="guide-content">
+
+                        <div class="guide-title">
+
+                            <div class="guide-title-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <h3>Passenger Registration</h3>
+
+                        </div>
+
+                        <ol>
+                            <li>
+                                Click <strong>Register</strong> on the
+                                home page.
+                            </li>
+
+                            <li>
+                                Enter your <strong>Full Name</strong>.
+                            </li>
+
+                            <li>
+                                Enter your <strong>Username</strong>.
+                            </li>
+
+                            <li>
+                                Enter your <strong>Email Address</strong>.
+                            </li>
+
+                            <li>
+                                Create a secure
+                                <strong>Password</strong>.
+                            </li>
+
+                            <li>
+                                Click <strong>Register</strong>.
+                            </li>
+
+                            <li>
+                                Login using your
+                                <strong>Username and Password</strong>.
+                            </li>
+                        </ol>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Booking -->
+                <div class="guide-section">
+
+                    <div class="guide-number">
+                        02
+                    </div>
+
+                    <div class="guide-content">
+
+                        <div class="guide-title">
+
+                            <div class="guide-title-icon gold-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+
+                            <h3>How to Book a Ticket</h3>
+
+                        </div>
+
+                        <ol>
+                            <li>
+                                Login to your account.
+                            </li>
+
+                            <li>
+                                Open
+                                <strong>Available Schedules</strong>.
+                            </li>
+
+                            <li>
+                                Select your preferred
+                                <strong>State</strong>.
+                            </li>
+
+                            <li>
+                                Select the
+                                <strong>Bus</strong>.
+                            </li>
+
+                            <li>
+                                Select the
+                                <strong>Route</strong>.
+                            </li>
+
+                            <li>
+                                Choose an available
+                                <strong>Seat</strong>.
+                            </li>
+
+                            <li>
+                                Enter passenger details if required.
+                            </li>
+
+                            <li>
+                                Click <strong>Book Ticket</strong>.
+                            </li>
+
+                            <li>
+                                Print or email your ticket after a
+                                successful booking.
+                            </li>
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 FAQ
+            ========================================== -->
+            <section class="faq-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon faq-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <span>COMMON QUESTIONS</span>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-grid">
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-ban"></i>
+                            </div>
+
+                            <h3>Can I cancel my booking?</h3>
+
+                        </div>
+
+                        <p>
+                            Yes. Contact the terminal before the departure
+                            time for assistance with your booking.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-chair"></i>
+                            </div>
+
+                            <h3>Can I choose my seat?</h3>
+
+                        </div>
+
+                        <p>
+                            Yes. Available seats are displayed during
+                            the booking process, allowing you to select
+                            an available seat.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+
+                            <h3>How do I receive my ticket?</h3>
+
+                        </div>
+
+                        <p>
+                            After a successful booking, you can print
+                            your ticket or receive it through email.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <h3>What happens if I miss my bus?</h3>
+
+                        </div>
+
+                        <p>
+                            Contact the terminal immediately.
+                            Rescheduling depends on availability and
+                            terminal policy.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <h3>How can I contact customer support?</h3>
+
+                        </div>
+
+                        <p>
+                            Use the Contact page or visit the terminal's
+                            customer service desk for assistance.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+
+                        <div class="faq-question">
+
+                            <div class="question-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+
+                            <h3>What if I need more assistance?</h3>
+
+                        </div>
+
+                        <p>
+                            Contact the terminal support team for
+                            assistance with bookings, schedules or
+                            other passenger services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 SUPPORT BANNER
+            ========================================== -->
+            <section class="support-banner">
+
+                <div class="support-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="support-content">
+
+                    <span>PASSENGER SUPPORT</span>
+
+                    <h2>Need additional assistance?</h2>
+
+                    <p>
+                        Our support team is available to help you with
+                        booking and terminal-related questions.
+                    </p>
+
+                </div>
+
+                <a href="#" class="support-button">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+
+        <div>
+            <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+            <span>ATC Passenger Portal</span>
+        </div>
+
+        <p>
+            &copy; 2026  AGE TRANSIT COMPANY
+            All rights reserved.
+        </p>
+
+        <span>
+            <i class="fa-solid fa-shield-halved"></i>
+            Secure Platform
+        </span>
+
+    </footer>
+
+
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

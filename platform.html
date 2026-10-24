@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/platform.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <strong>ATC</strong>
+                    <span>Transport System</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-title">
+                MANAGEMENT
+            </div>
+
+            <ul class="sidebar-nav">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html" class="active">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-divider"></div>
+
+            <ul class="sidebar-bottom">
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>System Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-footer">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>Secure Management Portal</span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-bar">
+
+                <div>
+
+                    <span class="page-label">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        TERMINAL OPERATIONS
+                    </span>
+
+                    <h1>Platforms & Bays</h1>
+
+                    <p>
+                        Manage terminal bays, their availability and
+                        assigned buses.
+                    </p>
+
+                </div>
+
+                
+                <div class="top-bar-actions">
+
+                    <!-- PLATFORM NOTIFICATIONS -->
+                    <div class="notification-box platform-notification-box">
+
+                        <button id="platformNotificationBtn" class="notification-btn" type="button">
+
+                            <i class="fa-solid fa-bell"></i>
+
+                            <span id="platformNotificationCount">0</span>
+
+                        </button>
+
+                        <div id="platformNotificationPanel" class="notification-panel">
+
+                            <div class="notification-header">
+
+                                <div>
+                                    <span>BUS MOVEMENT</span>
+                                    <h3>Notifications</h3>
+                                </div>
+
+                                <button id="clearPlatformNotificationsBtn" class="clear-notifications-btn"
+                                    title="Clear movement notifications" type="button">
+
+                                    <i class="fa-solid fa-broom"></i>
+
+                                </button>
+
+                            </div>
+
+                            <ul id="platformNotificationList"></ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- USER PROFILE -->
+                    <div class="admin-profile">
+
+                        <div class="profile-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div>
+                            <strong>Administrator</strong>
+                            <span>System Manager</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                ```
+
+
+            </header>
+
+
+            <!-- =========================================
+                 PAGE INTRO
+            ========================================== -->
+            <section class="management-banner">
+
+                <div class="banner-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <div class="banner-content">
+
+                    <span>BAY MANAGEMENT</span>
+
+                    <h2>Control your terminal bays efficiently.</h2>
+
+                    <p>
+                        Add, assign and monitor terminal bays while
+                        keeping track of their current availability.
+                    </p>
+
+                </div>
+
+                <div class="banner-decoration">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 STATISTICS
+            ========================================== -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>TOTAL BAYS</span>
+
+                        <strong id="totalBays">0</strong>
+
+                    </div>
+
+                    <div class="stat-decoration">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>AVAILABLE</span>
+
+                        <strong id="availableBays">—</strong>
+
+                    </div>
+
+                    <div class="stat-decoration">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon gold">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>ASSIGNED</span>
+
+                        <strong id="assignedBays">—</strong>
+
+                    </div>
+
+                    <div class="stat-decoration">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>OCCUPIED</span>
+
+                        <strong id="occupiedBays">—</strong>
+
+                    </div>
+
+                    <div class="stat-decoration">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 ADD BAY FORM
+            ========================================== -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <div>
+                        <span>BAY REGISTRATION</span>
+                        <h2>Add New Bay</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="form-description">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p>
+                        Enter the required information below to register
+                        a new terminal bay.
+                    </p>
+
+                </div>
+
+
+                <form action="" id="bayForm">
+
+                    <div class="form-group">
+
+                        <label for="bayState">
+                            <i class="fa-solid fa-location-dot"></i>
+                            State
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <select id="bayState" required>
+
+                                <option value="">
+                                    Select State
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bayNumber">
+                            <i class="fa-solid fa-hashtag"></i>
+                            Bay Number
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <input type="text" id="bayNumber" placeholder="e.g. Bay 01" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bayStatus">
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                            Bay Status
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <select id="bayStatus" required disabled>
+
+                                <option value="">
+                                    Select Status
+                                </option>
+
+                                <option value="Occupied">
+                                    Occupied
+                                </option>
+
+                                <option value="Available">
+                                    Available
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="assignedBus">
+                            <i class="fa-solid fa-bus"></i>
+                            Assigned Bus
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <select id="assignedBus">
+
+                                <option value="">
+                                    Select Bus (optional)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-action">
+
+                        <button type="submit">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add Bay
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =========================================
+                 BAY LIST
+            ========================================== -->
+            <section class="bay-list-card">
+
+                <div class="list-header">
+
+                    <div>
+
+                        <span>BAY DIRECTORY</span>
+
+                        <h2>Available Bays</h2>
+
+                    </div>
+
+                    <div class="list-status">
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        <span>Live Records</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="search-area">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchBay" placeholder="Search bay number...">
+
+                    </div>
+
+                    <div class="record-label">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        Terminal Bay Records
+
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>State</th>
+
+                                <th>Bay Number</th>
+
+                                <th>Status</th>
+
+                                <th>Assigned Bus</th>
+
+                                <th>Bus Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="bayTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 INCOMING BUSES
+            ========================================== -->
+            <section class="bay-list-card incoming-buses-card">
+
+                <div class="list-header">
+
+                    <div>
+
+                        <span>BUS MOVEMENT</span>
+
+                        <h2>Incoming Buses</h2>
+
+                    </div>
+
+                    <div class="list-status">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        <span>Live Movements</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search-area">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchIncomingBus" placeholder="Search bus or route...">
+
+                    </div>
+
+                    <div class="record-label">
+
+                        <i class="fa-solid fa-bus"></i>
+
+                        Incoming Bus Records
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Bus</th>
+
+                                <th>From</th>
+
+                                <th>Route</th>
+
+                                <th>Destination</th>
+
+                                <th>Departure</th>
+
+                                <th>Expected Arrival</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="incomingBusTableBody">
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </section>
+
+
+            <section class="bay-list-card movement-history-card">
+                <div class="list-header">
+                    <div>
+                        <span>BUS MOVEMENT</span>
+                        <h2>Movement History</h2>
+                    </div>
+
+                    <div class="list-status">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Completed Arrivals</span>
+                    </div>
+                </div>
+
+                <div class="search-area">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchMovementHistory" placeholder="Search bus or route...">
+                    </div>
+
+                    <div class="record-label">
+                        <i class="fa-solid fa-route"></i>
+                        Completed Movement Records
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Bus</th>
+                                <th>From</th>
+                                <th>Route</th>
+                                <th>Destination</th>
+                                <th>Departure</th>
+                                <th>Expected Arrival</th>
+                                <th>Actual Arrival</th>
+                                <th>Confirmed By</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="movementHistoryTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+
+        <div>
+
+            <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+
+            <span>ATC Transport System</span>
+
+        </div>
+
+        <p>
+            &copy; 2026  AGE TRANSIT COMPANY
+            All rights reserved.
+        </p>
+
+        <span class="secure-footer">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure Management Portal
+
+        </span>
+
+    </footer>
+
+
+    <script type="module" src="js/script.js"></script>
+    
+  
+
+</body>
+
+</html>

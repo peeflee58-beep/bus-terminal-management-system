@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/buses.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         DASHBOARD LAYOUT
+    ====================================================== -->
+
+    <div class="dashboard-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Brand -->
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+                </div>
+
+                <div>
+                    <strong>ATC</strong>
+                    <span>AGE TRANSIT COMPANY</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">MAIN MENU</p>
+
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="buses.html" class="active">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-bus"></i>
+                            </span>
+                            <span>Buses</span>
+                            <span class="active-indicator"></span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="routes.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-route"></i>
+                            </span>
+                            <span>Routes</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="schedules.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </span>
+                            <span>Schedules</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="bookings.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </span>
+                            <span>Bookings</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="platform.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </span>
+                            <span>Platforms</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="staff.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </span>
+                            <span>Staffs</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="ticket.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-ticket-simple"></i>
+                            </span>
+                            <span>Tickets</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="reports.html">
+                            <span class="nav-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </span>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <a href="#" onclick="logout()" class="logout-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
+
+            <header class="top-bar">
+
+                <div class="page-title">
+
+                    <div class="mobile-menu-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="page-label">
+                            TRANSPORT OPERATIONS
+                        </span>
+
+                        <h1>Bus Management</h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-details">
+                        <strong>Administrator</strong>
+                        <span>System Manager</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 WELCOME BANNER
+            ================================================== -->
+
+            <section class="management-banner">
+
+                <div class="banner-content">
+
+                    <span class="banner-tag">
+                        <i class="fa-solid fa-circle-check"></i>
+                        FLEET MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Manage Your
+                        <span>Transport Fleet</span>
+                    </h2>
+
+                    <p>
+                        Add, monitor and manage all buses operating
+                        within the terminal from one central location.
+                    </p>
+
+                </div>
+
+
+                <div class="banner-visual">
+
+                    <div class="fleet-circle circle-one"></div>
+                    <div class="fleet-circle circle-two"></div>
+
+                    <i class="fa-solid fa-bus banner-bus"></i>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <section class="stats-grid">
+
+                <div class="card buses-card stat-card">
+
+                    <div class="stat-icon bus-stat-icon">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                    <div class="stat-information">
+
+                        <span>Total Fleet</span>
+
+                        <p id="totalBuses">0</p>
+
+                        <small>
+                            Registered buses
+                        </small>
+
+                    </div>
+
+                    <div class="stat-decoration">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card secondary-stat">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-road"></i>
+                    </div>
+
+                    <div class="stat-information">
+
+                        <span>Fleet Status</span>
+
+                        <p>Active</p>
+
+                        <small>
+                            Transport operations
+                        </small>
+
+                    </div>
+
+                    <div class="online-indicator">
+                        <span></span>
+                        Online
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card secondary-stat">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="stat-information">
+
+                        <span>System</span>
+
+                        <p>Secure</p>
+
+                        <small>
+                            Fleet records protected
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ADD BUS
+            ================================================== -->
+
+            <section class="form-card">
+
+
+                <div class="form-card-header">
+
+                    <div class="form-title">
+
+                        <div class="form-title-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                        <div>
+
+                            <span>FLEET REGISTRATION</span>
+
+                            <h2>Add New Bus</h2>
+
+                            <p>
+                                Register a new bus into the terminal system.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="secure-label">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Secure Record
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form action="" id="busForm">
+
+                    <div class="form-input-grid">
+
+
+                        <!-- STATE -->
+
+                        <div class="input-group">
+
+                            <label for="busState">
+                                State
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <input type="text" id="busState" placeholder="Enter state" required>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- BUS NUMBER -->
+
+                        <div class="input-group">
+
+                            <label for="busNumber">
+                                Bus Number
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-hashtag"></i>
+
+                                <input type="text" id="busNumber" placeholder="e.g. B001" required>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- BUS TYPE -->
+
+                        <div class="input-group">
+
+                            <label for="busType">
+                                Bus Type
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-bus-simple"></i>
+
+                                <input type="text" id="busType" placeholder="e.g. Luxury" required>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CAPACITY -->
+
+                        <div class="input-group">
+
+                            <label for="capacity">
+                                Passenger Capacity
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-chair"></i>
+
+                                <input type="number" id="capacity" placeholder="e.g. 50" required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-footer">
+
+                        <div class="form-hint">
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                Make sure the bus information is correct
+                                before registering.
+                            </span>
+
+                        </div>
+
+
+                        <button type="submit">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            <span>Add Bus</span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BUS LIST
+            ================================================== -->
+
+            <section class="recent-activities bus-list-card">
+
+
+                <!-- TABLE HEADER -->
+
+                <div class="table-header">
+
+                    <div>
+
+                        <span class="table-label">
+                            FLEET DIRECTORY
+                        </span>
+
+                        <h2>Available Buses</h2>
+
+                        <p>
+                            View and manage all registered buses.
+                        </p>
+
+                    </div>
+
+
+                    <div class="table-tools">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" id="searchBus" placeholder="Search bus number...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TABLE -->
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>STATE</th>
+
+                                <th>BUS NUMBER</th>
+
+                                <th>BUS TYPE</th>
+
+                                <th>CAPACITY</th>
+
+                                <th>DATE / TIME</th>
+
+                                <th>ACTION</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="busTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- TABLE FOOTER -->
+
+                <div class="table-footer">
+
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Fleet records are updated automatically.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+
+            <div>
+
+                <strong>AGE TRANSIT COMPANY BTMS</strong>
+
+                <span>
+                    Smart. Reliable. Efficient.
+                </span>
+
+            </div>
+
+            <p>
+                &copy; 2026  AGE TRANSIT COMPANY
+            </p>
+
+        </div>
+
+    </footer>
+
+<!-- Make sure type="module" is present -->
+<script type="module" src="js/script.js"></script>
+
+</body>
+
+</html>

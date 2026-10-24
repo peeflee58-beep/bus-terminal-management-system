@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/allschedules.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+            </div>
+
+            <div>
+                <h1>ATC</h1>
+                <span>Age Transit Company</span>
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <div class="secure-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure Booking
+            </div>
+
+            <a href="index.html" class="home-btn">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="page-container">
+
+        <!-- Hero -->
+        <section class="schedule-hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    TRAVEL SCHEDULES
+                </div>
+
+                <h2>
+                    Find Your
+                    <span>Perfect Trip</span>
+                </h2>
+
+                <p>
+                    Browse available bus schedules, compare fares and
+                    choose a convenient trip for your journey.
+                </p>
+
+            </div>
+
+            <div class="hero-icon">
+
+                <div class="bus-glow">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SEARCH AREA ================= -->
+        <section class="search-section">
+
+            <div class="search-title">
+
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div>
+                    <h3>Find a Schedule</h3>
+                    <p>Search by state or route</p>
+                </div>
+
+            </div>
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchAvailableSchedule"
+                    placeholder="Search by State or Route..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCHEDULE TABLE ================= -->
+        <section class="schedule-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        AVAILABLE TRIPS
+                    </span>
+
+                    <h2>Bus Schedules</h2>
+
+                    <p>
+                        Select a schedule to view its trip details.
+                    </p>
+
+                </div>
+
+                <div class="schedule-status">
+
+                    <span class="status-dot"></span>
+
+                    Live Schedule
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>
+                                <i class="fa-solid fa-location-dot"></i>
+                                State
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-route"></i>
+                                Route
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-bus"></i>
+                                Bus
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-user-tie"></i>
+                                Driver
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-calendar"></i>
+                                Date
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-clock"></i>
+                                Time
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-naira-sign"></i>
+                                Fare
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-chair"></i>
+                                Seats Left
+                            </th>
+
+                            <th>
+                                <i class="fa-solid fa-signal"></i>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="availableScheduleBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRIP DETAILS ================= -->
+        <section id="tripDetails" class="trip-details">
+
+            <div class="trip-placeholder">
+
+                <div class="trip-icon">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+
+                <div>
+
+                    <span class="section-label">
+                        SELECTED TRIP
+                    </span>
+
+                    <h3>Trip Details</h3>
+
+                    <p>
+                        Select any schedule from the table above
+                        to view the trip details.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOOKING ACTION ================= -->
+        <section class="booking-action">
+
+            <div class="booking-info">
+
+                <div class="booking-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <div>
+
+                    <h3>Ready to travel?</h3>
+
+                    <p>
+                        Select an available schedule above to continue
+                        with your ticket booking.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="bookTicketBtn"
+                onclick="bookSelectedTicket()"
+                disabled
+            >
+
+                <i class="fa-solid fa-ticket"></i>
+
+                Book Ticket
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= INFORMATION CARDS ================= -->
+        <section class="travel-info">
+
+            <div class="info-card">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <h3>Check Departure</h3>
+                    <p>
+                        Confirm your departure date and time
+                        before booking.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-chair"></i>
+                </div>
+
+                <div>
+                    <h3>Check Seats</h3>
+                    <p>
+                        Available seats are updated based on
+                        current bookings.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <h3>Secure Booking</h3>
+                    <p>
+                        Your trip information is handled through
+                        the BTMS booking system.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="assets/images/Age.jpg" alt="AGE-LOGO">
+
+            <strong>ATC</strong>
+
+        </div>
+
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY
+            All Rights Reserved.
+        </p>
+
+        <span>
+            Travel smart. Travel safely.
+        </span>
+
+    </footer>
+
+
+    <!-- Existing JavaScript -->
+    <script type="module" src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

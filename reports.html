@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/report.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             SIDEBAR
+             ========================================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <h2>ATC</h2>
+                    <span>Management System</span>
+                </div>
+            </div>
+
+            <div class="menu-title">MAIN MENU</div>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html" class="active">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+             ========================================= -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="dashboard-header">
+
+                <div class="header-title">
+
+                    <span class="page-label">
+                        ANALYTICS & REPORTING
+                    </span>
+
+                    <h1>
+                        System Reports
+                    </h1>
+
+                    <p>
+                        Monitor terminal operations, schedules, bookings,
+                        staff and revenue performance.
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>System Manager</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================================
+                 REPORT ACTIONS
+                 ========================================= -->
+            <section class="report-toolbar">
+
+                <div class="toolbar-info">
+
+                    <div class="toolbar-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+                        <h3>Terminal Performance Report</h3>
+                        <p>
+                            Generate, print or export the latest system data.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="report-action">
+
+                    <button id="printReportBtn"
+                        class="btn-print"
+                        onclick="printReport()">
+
+                        <i class="fa-solid fa-print"></i>
+                        Print Report
+
+                    </button>
+
+                    <button class="btn-export"
+                        onclick="exportReportToExcel()">
+
+                        <i class="fa-solid fa-file-excel"></i>
+                        Export Excel
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 REPORT CONTAINER
+                 ========================================= -->
+            <div id="reportContainer">
+
+
+                <!-- =====================================
+                     1. FLEET SUMMARY
+                     ===================================== -->
+                <section class="report-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            01
+                        </div>
+
+                        <div>
+                            <h2>Fleet Summary</h2>
+                            <p>Overview of the terminal's core fleet resources.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-cards">
+
+                        <div class="card report-stat buses-card">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-bus"></i>
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Buses</span>
+                                <p id="reportBuses">0</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card report-stat routes-card">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Routes</span>
+                                <p id="reportRoutes">0</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card report-stat schedules-card">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Schedules</span>
+                                <p id="reportSchedules">0</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card report-stat bookings-card">
+
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+
+                            <div class="stat-content">
+                                <span>Total Bookings</span>
+                                <p id="reportBookings">0</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================
+                     2. SCHEDULE SUMMARY
+                     ===================================== -->
+                <section class="report-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            02
+                        </div>
+
+                        <div>
+                            <h2>Schedule Summary</h2>
+                            <p>Current status of all terminal schedules.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-grid">
+
+                        <div class="card status-card scheduled-card">
+                            <span>Scheduled</span>
+                            <strong id="reportScheduled">0</strong>
+                            <small>Upcoming</small>
+                        </div>
+
+                        <div class="card status-card boarding-card">
+                            <span>Boarding</span>
+                            <strong id="reportBoarding">0</strong>
+                            <small>Boarding passengers</small>
+                        </div>
+
+                        <div class="card status-card delayed-card">
+                            <span>Delayed</span>
+                            <strong id="reportDelayed">0</strong>
+                            <small>Delayed trips</small>
+                        </div>
+
+                        <div class="card status-card departed-card">
+                            <span>Departed</span>
+                            <strong id="reportDeparted">0</strong>
+                            <small>Completed departures</small>
+                        </div>
+
+                        <div class="card status-card pending-card">
+                            <span>Cancelled Scheduled</span>
+                            <strong id="reportCancelled">0</strong>
+                            <small>Cancelled schedules</small>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================
+                     STAFF + REVENUE
+                     ===================================== -->
+                <div class="section-summary">
+
+
+                    <!-- =================================
+                         3. STAFF SUMMARY
+                         ================================= -->
+                    <section class="report-section">
+
+                        <div class="section-heading">
+
+                            <div class="section-number">
+                                03
+                            </div>
+
+                            <div>
+                                <h2>Staff Summary</h2>
+                                <p>Workforce distribution.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card staff-report-card">
+
+                            <div class="staff-total">
+
+                                <div class="large-stat-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+
+                                <div>
+                                    <span>Total Staff</span>
+                                    <h1 id="reportStaff">0</h1>
+                                </div>
+
+                            </div>
+
+                            <hr>
+
+
+                            <div class="staff-summary">
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-user-tie"></i>
+                                        Drivers
+                                    </span>
+                                    <strong id="reportDrivers">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-money-bill"></i>
+                                        Cashiers
+                                    </span>
+                                    <strong id="reportCashier">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-building"></i>
+                                        Terminal Officers
+                                    </span>
+                                    <strong id="reportTerminal">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-user-shield"></i>
+                                        Managers
+                                    </span>
+                                    <strong id="reportManagers">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        Security
+                                    </span>
+                                    <strong id="reportSecurity">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-venus-mars"></i>
+                                        Male
+                                    </span>
+                                    <strong id="reportMale">0</strong>
+                                </div>
+
+                                <div class="staff-row">
+                                    <span>
+                                        <i class="fa-solid fa-venus-mars"></i>
+                                        Female
+                                    </span>
+                                    <strong id="reportFemale">0</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         4. REVENUE SUMMARY
+                         ================================= -->
+                    <section class="report-section">
+
+                        <div class="section-heading">
+
+                            <div class="section-number">
+                                04
+                            </div>
+
+                            <div>
+                                <h2>Revenue Summary</h2>
+                                <p>Booking payment and revenue overview.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="card revenue-card">
+
+                            <div class="revenue-header">
+
+                                <div class="revenue-icon">
+                                    <i class="fa-solid fa-naira-sign"></i>
+                                </div>
+
+                                <div>
+                                    <span>Total Revenue</span>
+                                    <h2 id="reportRevenue">0</h2>
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+
+
+                            <div class="revenue-stats">
+
+                                <div class="revenue-item paid-card">
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                    <div>
+                                        <span>Paid Bookings</span>
+                                        <strong id="reportPaid">0</strong>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="revenue-item pending-card">
+
+                                    <i class="fa-solid fa-clock"></i>
+
+                                    <div>
+                                        <span>Pending Payment</span>
+                                        <strong id="reportPending">0</strong>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="revenue-item departed-card">
+
+                                    <i class="fa-solid fa-circle-xmark"></i>
+
+                                    <div>
+                                        <span>Cancelled Bookings</span>
+                                        <strong id="reportCancelledBooking">0</strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =====================================
+                     5. SYSTEM SUMMARY
+                     ===================================== -->
+                <section class="report-section system-summary-section">
+
+                    <div class="section-heading">
+
+                        <div class="section-number">
+                            05
+                        </div>
+
+                        <div>
+                            <h2>System Summary</h2>
+                            <p>Detailed record count across system modules.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Total Records</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon bus">
+                                            <i class="fa-solid fa-bus"></i>
+                                        </span>
+                                        Buses
+                                    </td>
+                                    <td id="busSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon route">
+                                            <i class="fa-solid fa-route"></i>
+                                        </span>
+                                        Routes
+                                    </td>
+                                    <td id="routeSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon schedule">
+                                            <i class="fa-solid fa-clock"></i>
+                                        </span>
+                                        Active Schedules
+                                    </td>
+                                    <td id="scheduleSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon boarding">
+                                            <i class="fa-solid fa-person-walking-luggage"></i>
+                                        </span>
+                                        Boarding Schedules
+                                    </td>
+                                    <td id="boardingScheduleSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon delayed">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>
+                                        </span>
+                                        Delayed Schedules
+                                    </td>
+                                    <td id="delayedScheduleSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon departed">
+                                            <i class="fa-solid fa-road"></i>
+                                        </span>
+                                        Departed Schedules
+                                    </td>
+                                    <td id="departedScheduleSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon cancelled">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </span>
+                                        Cancelled Schedules
+                                    </td>
+                                    <td id="cancelledScheduleSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon booking">
+                                            <i class="fa-solid fa-ticket"></i>
+                                        </span>
+                                        Active Bookings
+                                    </td>
+                                    <td id="bookingSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon paid">
+                                            <i class="fa-solid fa-credit-card"></i>
+                                        </span>
+                                        Paid Bookings
+                                    </td>
+                                    <td id="bookingPaidSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon pending">
+                                            <i class="fa-solid fa-hourglass-half"></i>
+                                        </span>
+                                        Pending Bookings
+                                    </td>
+                                    <td id="bookingPendingSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon cancelled">
+                                            <i class="fa-solid fa-ban"></i>
+                                        </span>
+                                        Cancelled Bookings
+                                    </td>
+                                    <td id="cancelledBookingSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon expired">
+                                            <i class="fa-solid fa-clock-rotate-left"></i>
+                                        </span>
+                                        Expired Bookings
+                                    </td>
+                                    <td id="expiredBookingSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon passenger">
+                                            <i class="fa-solid fa-users"></i>
+                                        </span>
+                                        Total Passengers
+                                    </td>
+                                    <td id="passengerSummary">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="module-icon staff">
+                                            <i class="fa-solid fa-user-group"></i>
+                                        </span>
+                                        Staff
+                                    </td>
+                                    <td id="staffSummary">0</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================
+                     REPORT SIGNATURE
+                     ===================================== -->
+                <section class="report-signature">
+
+                    <div class="signature-box">
+                        <div class="signature-line"></div>
+
+                        <strong>Prepared By</strong>
+
+                        <span>
+                            System Administrator
+                        </span>
+                    </div>
+
+
+                    <div class="signature-box">
+
+                        <div class="signature-line"></div>
+
+                        <strong>Approved By</strong>
+
+                        <span>
+                            Terminal Manager
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <div class="report-footer">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Generated by Bus Terminal Management System
+                    </span>
+
+                    <span class="footer-divider">•</span>
+
+                    <span>
+                        © 2026 AGE TRANSIT COMPANY
+                    </span>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026  AGE TRANSIT COMPANY
+        </p>
+    </footer>
+
+
+    <!-- Excel Library -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script type="module" src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <link rel="stylesheet" href="css/bookinghistory.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="bh-layout">
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="bh-header">
+
+            <div class="bh-logo">
+
+                <div class="bh-logo-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <strong>ATC</strong>
+                    <span>AGE TRANSIT COMPANY</span>
+                </div>
+
+            </div>
+
+
+            <div class="bh-page-title">
+
+                <div class="bh-title-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <div>
+                    <h2>Booking Management</h2>
+                    <p>Manage passenger reservations and transactions</p>
+                </div>
+
+            </div>
+
+
+            <div class="bh-user-panel">
+
+                <div class="bh-admin-profile">
+
+                    <div class="bh-admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>System Admin</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="bh-sidebar">
+
+            <div class="bh-sidebar-logo">
+
+                <div class="bh-sidebar-bus">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <h2>ATC</h2>
+                    <span>Terminal Management</span>
+                </div>
+
+            </div>
+
+
+            <div class="bh-menu-label">
+                MAIN MENU
+            </div>
+
+
+            <ul class="bh-menu">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li class="bh-active">
+                    <a href="bookinghistory.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staff</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="bh-sidebar-bottom">
+
+                <div class="bh-menu-label">
+                    SYSTEM
+                </div>
+
+                <a href="#" onclick="logout()" class="bh-sidebar-logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+        ====================================================== -->
+
+        <main class="bh-main">
+
+            <!-- Page Introduction -->
+
+            <section class="bh-welcome">
+
+                <div>
+
+                    <span class="bh-section-label">
+                        TRANSACTION CENTER
+                    </span>
+
+                    <h1>Passenger Bookings</h1>
+
+                    <p>
+                        Create, monitor and manage passenger bookings,
+                        payments and travel information from one place.
+                    </p>
+
+                </div>
+
+                <div class="bh-welcome-icon">
+
+                    <i class="fa-solid fa-ticket"></i>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <div class="bh-summary-grid">
+
+                <div class="bh-summary-card">
+
+                    <div class="bh-summary-icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <div class="bh-summary-details">
+
+                        <span>TOTAL BOOKINGS</span>
+
+                        <h3 id="totalBookings">0</h3>
+
+                        <small>
+                            Passenger reservations
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE SUMMARY CARD -->
+
+                <div class="bh-summary-card bh-summary-revenue">
+
+                    <div class="bh-summary-icon">
+                        <i class="fa-solid fa-naira-sign"></i>
+                    </div>
+
+                    <div class="bh-summary-details">
+
+                        <span>TOTAL REVENUE</span>
+
+                        <h3 id="bookingHistoryRevenue">₦0</h3>
+
+                        <small>
+                            Revenue from paid bookings
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bh-summary-card bh-summary-info">
+
+                    <div class="bh-summary-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="bh-summary-details">
+
+                        <span>BOOKING CENTER</span>
+
+                        <h3>ACTIVE</h3>
+
+                        <small>
+                            Ready to process bookings
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bh-summary-card bh-summary-secure">
+
+                    <div class="bh-summary-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="bh-summary-details">
+
+                        <span>PAYMENT CONTROL</span>
+
+                        <h3>SECURE</h3>
+
+                        <small>
+                            Payment verification enabled
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOOKING FORM
+            ================================================== -->
+
+            <section class="bh-booking-form-card">
+
+                <div class="bh-card-header">
+
+                    <div class="bh-card-title">
+
+                        <div class="bh-card-title-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+
+                        <div>
+                            <span>NEW RESERVATION</span>
+                            <h2>Book Passenger</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="bh-required-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Complete all required information
+                    </div>
+
+                </div>
+
+
+                <form action="" id="bookingForm" class="bh-booking-form">
+
+
+                    <!-- PASSENGER INFORMATION -->
+
+                    <div class="bh-form-section">
+
+                        <div class="bh-form-section-title">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <div>
+                                <h3>Passenger Information</h3>
+                                <span>Enter the passenger's details</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bh-form-grid">
+
+                            <div class="bh-input-group">
+
+                                <label for="passengerName">
+                                    Passenger Name
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+
+                                    <input type="text" id="passengerName" placeholder="Enter passenger name" required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="passengerPhone">
+                                    Passenger Phone
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    <input type="text" id="passengerPhone" placeholder="Enter phone number" required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="passengerEmail">
+                                    Passenger Email
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-envelope"></i>
+
+                                    <input type="email" id="passengerEmail" placeholder="Enter email address" required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="gender">
+                                    Gender
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-venus-mars"></i>
+
+                                    <select id="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="ticketType">
+                                    Ticket Type
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-ticket"></i>
+
+                                    <select id="ticketType">
+                                        <option value="">Select Ticket Type</option>
+                                        <option value="One Way">One Way</option>
+                                        <option value="Round Trip">Round Trip</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="bh-input-group">
+                                <label for="kidCount">
+                                    Number of Kids
+                                </label>
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-child"></i>
+                                    <input type="number" id="kidCount" name="kidCount" min="0" value="0"
+                                        placeholder="Enter number of kids">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SPONSOR INFORMATION -->
+
+                    <div class="bh-form-section">
+
+                        <div class="bh-form-section-title">
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                            <div>
+                                <h3>Sponsor Information</h3>
+                                <span>Details of the passenger's sponsor</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bh-form-grid">
+
+                            <div class="bh-input-group">
+
+                                <label for="sponsorName">
+                                    Sponsor Name
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+
+                                    <input type="text" id="sponsorName" placeholder="Enter sponsor name" required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="sponsorPhone">
+                                    Sponsor Phone
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    <input type="text" id="sponsorPhone" placeholder="Enter sponsor phone" required>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="sponsorEmail">
+                                    Sponsor Email
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-envelope"></i>
+
+                                    <input type="email" id="sponsorEmail" placeholder="Enter sponsor email" required>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TRIP INFORMATION -->
+
+                    <div class="bh-form-section">
+
+                        <div class="bh-form-section-title">
+
+                            <i class="fa-solid fa-route"></i>
+
+                            <div>
+                                <h3>Trip Information</h3>
+                                <span>Select the passenger's journey</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bh-form-grid">
+
+                            <div class="bh-input-group">
+
+                                <label for="bookingState">
+                                    State
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    <select id="bookingState" required>
+                                        <option value="">Select State</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="bookingBusNumber">
+                                    Bus
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-bus"></i>
+
+                                    <select id="bookingBusNumber" required>
+                                        <option value="">Select Bus</option>
+                                    </select>
+                                </div>
+
+                                <p id="remainingSeats" class="bh-seat-info"></p>
+
+                            </div>
+                            <!-- SEAT SELECTION -->
+
+                            <div class="bh-seat-selection-section">
+
+                                <div class="bh-seat-selection-header">
+
+                                    <div>
+                                        <h3>
+                                            <i class="fa-solid fa-chair"></i>
+                                            Select Seat
+                                        </h3>
+
+                                        <p>
+                                            Choose an available seat for the passenger.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="bh-seat-legend">
+
+                                    <span class="bh-seat-legend-item">
+                                        <span class="bh-seat-legend-box bh-seat-available"></span>
+                                        Available
+                                    </span>
+
+                                    <span class="bh-seat-legend-item">
+                                        <span class="bh-seat-legend-box bh-seat-selected"></span>
+                                        Selected
+                                    </span>
+
+                                    <span class="bh-seat-legend-item">
+                                        <span class="bh-seat-legend-box bh-seat-occupied"></span>
+                                        Occupied
+                                    </span>
+
+                                </div>
+
+
+                                <div id="seatMap" class="bh-seat-map"></div>
+
+
+                                <div id="selectedSeatDisplay" class="bh-selected-seat-display">
+                                    Selected Seat:
+                                    <strong>None</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="bookingRoute">
+                                    Route
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-route"></i>
+
+                                    <select id="bookingRoute" required>
+                                        <option value="">Select Route</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="departureDate">
+                                    Departure Date
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-calendar-days"></i>
+
+                                    <input type="date" id="departureDate" readonly>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="departureTime">
+                                    Departure Time
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-clock"></i>
+
+                                    <input type="time" id="departureTime" readonly>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="driverName">
+                                    Driver Name
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-user-tie"></i>
+
+                                    <input type="text" id="driverName" placeholder="Driver Name" readonly>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="busStatus">
+                                    Bus Status
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-circle-dot"></i>
+
+                                    <input type="text" id="busStatus" placeholder="Bus Status" readonly>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bh-input-group">
+
+                                <label for="ticketPrice">
+                                    Ticket Fare
+                                </label>
+
+                                <div class="bh-input-wrapper">
+                                    <i class="fa-solid fa-naira-sign"></i>
+
+                                    <input type="text" id="ticketPrice" placeholder="Ticket Price" readonly>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PAYMENT
+                    ================================================== -->
+
+                    <div class="bh-form-section payment-section">
+
+                        <div class="bh-form-section-title">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <div>
+                                <h3>Payment Information</h3>
+                                <span>Select and process payment method</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="bh-input-group payment-method-select">
+
+                            <label for="paymentMethod">
+                                Payment Method
+                            </label>
+
+                            <div class="bh-input-wrapper">
+                                <i class="fa-solid fa-wallet"></i>
+
+                                <select id="paymentMethod" required>
+
+                                    <option value="">
+                                        Select Payment Method
+                                    </option>
+
+                                    <option value="Cash">
+                                        Cash on Arrival
+                                    </option>
+
+                                    <option value="Transfer">
+                                        Bank Transfer
+                                    </option>
+
+                                    <option value="Card">
+                                        Card Payment
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CASH PAYMENT -->
+
+                        <div id="cashPaymentBox" class="payment-box cash-payment" style="display: none;">
+
+                            <div class="payment-box-header">
+
+                                <div class="payment-icon cash-icon">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Cash on Arrival</h3>
+                                    <p>Payment will be made at the terminal before departure.</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="payment-amount">
+
+                                <span>Amount to Pay</span>
+
+                                <strong id="cashAmount">₦0</strong>
+
+                            </div>
+
+
+                            <div class="payment-status pending">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                Payment Status: Pending
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BANK TRANSFER -->
+
+                        <div id="transferPaymentBox" class="payment-box transfer-payment" style="display: none;">
+
+                            <div class="payment-box-header">
+
+                                <div class="payment-icon transfer-icon">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Bank Transfer</h3>
+                                    <p>
+                                        Transfer the exact ticket amount
+                                        to the account below.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="bank-details">
+
+                                <div>
+                                    <span>Bank Name</span>
+                                    <strong>AGE TRANSIT COMPANY Bank</strong>
+                                </div>
+
+                                <div>
+                                    <span>Account Name</span>
+                                    <strong>AGE TRANSIT COMPANY</strong>
+                                </div>
+
+                                <div>
+                                    <span>Account Number</span>
+                                    <strong>0123456789</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="payment-amount">
+
+                                <span>Amount to Pay</span>
+
+                                <strong id="transferAmount">₦0</strong>
+
+                            </div>
+
+
+                            <label for="transferReference">
+                                Transfer Reference
+                            </label>
+
+                            <input type="text" id="transferReference" placeholder="Enter transfer reference">
+
+
+                            <small>
+                                Enter the reference generated by your bank
+                                after completing the transfer.
+                            </small>
+
+
+                            <div class="payment-status verification">
+
+                                <i class="fa-solid fa-hourglass-half"></i>
+
+                                Payment Status: Pending Verification
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CARD PAYMENT -->
+
+                        <div id="cardPaymentBox" class="payment-box card-payment" style="display: none;">
+
+                            <div class="payment-box-header">
+
+                                <div class="payment-icon card-icon">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Card Payment</h3>
+                                    <p>
+                                        Enter your card details to proceed
+                                        with payment.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="payment-amount">
+
+                                <span>Amount to Pay</span>
+
+                                <strong id="cardAmount">₦0</strong>
+
+                            </div>
+
+
+                            <label for="cardName">
+                                Cardholder Name
+                            </label>
+
+                            <input type="text" id="cardName" placeholder="Name on card" autocomplete="cc-name">
+
+
+                            <label for="cardNumber">
+                                Card Number
+                            </label>
+
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19"
+                                autocomplete="cc-number">
+
+
+                            <div class="card-row">
+
+                                <div>
+
+                                    <label for="cardExpiry">
+                                        Expiry Date
+                                    </label>
+
+                                    <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5"
+                                        autocomplete="cc-exp">
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="cardCvv">
+                                        CVV
+                                    </label>
+
+                                    <input type="password" id="cardCvv" placeholder="***" maxlength="4"
+                                        autocomplete="cc-csc">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="secure-payment">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                Secure payment
+
+                            </div>
+
+
+                            <div class="card-payment-action">
+
+                                <button type="button" id="payWithCardBtn" class="pay-card-btn">
+
+                                    <i class="fa-solid fa-lock"></i>
+
+                                    Proceed to Secure Payment
+
+                                </button>
+
+                                <small class="card-payment-note">
+
+                                    You will be redirected to a secure
+                                    payment gateway to complete your payment.
+
+                                </small>
+
+                            </div>
+
+
+                            <div id="cardPaymentMessage" class="payment-status pending">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                Payment Status: Pending
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hidden fields -->
+
+                    <input type="text" id="receiptNumber" style="display: none;" readonly>
+
+                    <input type="text" id="seatNumber" style="display: none;" readonly>
+
+
+                    <!-- Submit -->
+
+                    <div class="bh-form-submit">
+
+                        <div class="bh-submit-note">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Review the booking information before
+                                submitting.
+                            </span>
+
+                        </div>
+
+                        <button type="submit">
+
+                            <i class="fa-solid fa-ticket"></i>
+
+                            Add Booking
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================================
+                 BOOKING HISTORY
+            ================================================== -->
+
+            <section class="bh-history-card">
+
+                <div class="bh-history-header">
+
+                    <div class="bh-history-title">
+
+                        <div class="bh-history-icon">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+
+                        <div>
+
+                            <span>TRANSACTION RECORDS</span>
+
+                            <h2>Booking History</h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bh-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchBooking" placeholder="Search booking...">
+
+                    </div>
+
+                </div>
+
+
+                <div class="bh-table-wrapper">
+
+                    <table class="bh-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Booking ID</th>
+                                <th>Receipt No.</th>
+                                <th>State</th>
+                                <th>Passenger Name</th>
+                                <th>Passenger Phone</th>
+                                <th>Passenger Email</th>
+
+                                <th>How many kids</th>
+                                <th>Sponsor Name</th>
+                                <th>Sponsor Phone</th>
+                                <th>Sponsor Email</th>
+                                <th>Gender</th>
+                                <th>Bus</th>
+                                <th>Route</th>
+                                <th>Bus Status</th>
+                                <th>Payment Method</th>
+                                <th>Payment Status</th>
+                                <th>Transaction Reference</th>
+                                <th>Booking Status</th>
+                                <th>Ticket Type</th>
+                                <th>Payment Seat</th>
+                                <th>Departure Date</th>
+                                <th>Departure Time</th>
+                                <th>Driver's Name</th>
+                                <th>Fare</th>
+                                <th>Booking Date/Time</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="bookingTableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CASH CONFIRMATION POPUP
+            ================================================== -->
+
+            <div id="cashConfirmPopup" class="payment-confirm-popup">
+
+                <div class="payment-confirm-content">
+
+                    <div class="popup-icon popup-cash">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+
+                    <h2>Confirm Cash Payment</h2>
+
+                    <p id="cashConfirmMessage">
+                        Have you received this cash payment?
+                    </p>
+
+                    <div class="payment-confirm-buttons">
+
+                        <button id="confirmCashYes" class="confirm-yes-btn">
+
+                            <i class="fa-solid fa-check"></i>
+                            YES, CONFIRM
+
+                        </button>
+
+                        <button id="confirmCashNo" class="confirm-no-btn">
+
+                            <i class="fa-solid fa-xmark"></i>
+                            NO, CANCEL
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAYMENT SUCCESS POPUP
+            ================================================== -->
+
+            <div id="paymentSuccessPopup" class="payment-success-popup">
+
+                <div class="payment-success-content">
+
+                    <div class="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <h2>Payment Successful</h2>
+
+                    <p id="paymentSuccessMessage"></p>
+
+                    <button type="button" id="paymentSuccessOk" class="payment-success-ok">
+
+                        OK
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TRANSFER CONFIRMATION POPUP
+            ================================================== -->
+
+            <div id="transferConfirmPopup" class="payment-confirm-popup">
+
+                <div class="payment-confirm-content">
+
+                    <div class="popup-icon popup-transfer">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <h2>Verify Bank Transfer</h2>
+
+                    <p id="transferConfirmMessage">
+                        Have you confirmed this bank transfer?
+                    </p>
+
+                    <div class="payment-confirm-buttons">
+
+                        <button type="button" id="confirmTransferYes" class="confirm-yes-btn">
+
+                            <i class="fa-solid fa-check"></i>
+                            YES, VERIFY
+
+                        </button>
+
+                        <button type="button" id="confirmTransferNo" class="confirm-no-btn">
+
+                            <i class="fa-solid fa-xmark"></i>
+                            NO, CANCEL
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CARD CONFIRMATION POPUP
+            ================================================== -->
+
+            <div id="cardConfirmPopup" class="payment-confirm-popup">
+
+                <div class="payment-confirm-content">
+
+                    <div class="popup-icon popup-card">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+
+                    <h2>Confirm Card Payment</h2>
+
+                    <p id="cardConfirmMessage">
+                        Do you want to proceed with this card payment?
+                    </p>
+
+                    <div class="payment-confirm-buttons">
+
+                        <button type="button" id="confirmCardYes" class="confirm-yes-btn">
+
+                            <i class="fa-solid fa-check"></i>
+                            YES, PAY
+
+                        </button>
+
+                        <button type="button" id="confirmCardNo" class="confirm-no-btn">
+
+                            <i class="fa-solid fa-xmark"></i>
+                            NO, CANCEL
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+     <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+            <footer>
+
+                <div class="footer-content">
+                    <img src="assets/images/Age.jpg" alt="ATC-LOGO">
+
+                    <div>
+                        <strong>AGE TRANSIT COMPANY</strong>
+                        <span>Smart. Reliable. Efficient.</span>
+                    </div>
+
+                    <p>
+                        &copy; 2026 AGE TRANSIT COMPANY
+                    </p>
+
+                </div>
+
+            </footer>
+
+
+    <!-- Existing Scripts -->
+
+
+   <script type="module" src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

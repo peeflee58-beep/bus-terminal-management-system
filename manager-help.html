@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/manager-help.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    <img src="assets/images/ATC.jpg" alt="">
+                </div>
+
+                <div>
+                    <strong>ATC</strong>
+                    <span>Transport System</span>
+                </div>
+
+            </div>
+
+            <div class="sidebar-title">
+                MANAGEMENT
+            </div>
+
+            <ul class="sidebar-nav">
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookings.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-divider"></div>
+
+            <ul class="sidebar-bottom">
+
+                <li>
+                    <a href="about.html" class="active">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Help & Guide</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-footer">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Secure Management Portal</span>
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-bar">
+
+                <div>
+                    <span class="page-label">
+                        <i class="fa-solid fa-circle-info"></i>
+                        SYSTEM INFORMATION
+                    </span>
+
+                    <h1>Help & User Guide</h1>
+
+                    <p>
+                        Everything you need to understand and use the
+                        Bus Terminal Management System.
+                    </p>
+                </div>
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <span>System Manager</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================================
+                 WELCOME BANNER
+            ========================================== -->
+            <section class="guide-banner">
+
+                <div class="banner-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div class="banner-content">
+
+                    <span>BTMS USER GUIDE</span>
+
+                    <h2>
+                        Need help using the system?
+                    </h2>
+
+                    <p>
+                        Find quick answers to common questions about
+                        buses, routes, schedules, bookings and terminal
+                        operations.
+                    </p>
+
+                </div>
+
+                <div class="banner-decoration">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 QUICK GUIDE CARDS
+            ========================================== -->
+            <section class="quick-guide">
+
+                <div class="guide-card">
+
+                    <div class="guide-card-icon blue">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+
+                    <div>
+                        <strong>Bus Management</strong>
+                        <span>Add and manage terminal buses.</span>
+                    </div>
+
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="guide-card-icon gold">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <div>
+                        <strong>Route Management</strong>
+                        <span>Create and maintain routes.</span>
+                    </div>
+
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="guide-card-icon green">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <strong>Schedules</strong>
+                        <span>Manage departure schedules.</span>
+                    </div>
+
+                </div>
+
+                <div class="guide-card">
+
+                    <div class="guide-card-icon purple">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+
+                    <div>
+                        <strong>Bookings</strong>
+                        <span>Manage passenger reservations.</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 FAQ SECTION
+            ========================================== -->
+            <section class="content-card">
+
+                <div class="section-heading">
+
+                    <div class="section-heading-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+                    <div>
+                        <span>COMMON QUESTIONS</span>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+
+                        <div class="faq-number">
+                            01
+                        </div>
+
+                        <div class="faq-content">
+
+                            <h3>
+                                How do I add a new bus?
+                            </h3>
+
+                            <p>
+                                Go to <strong>Bus Management</strong>,
+                                fill in the required bus details and
+                                click <strong>Add Bus</strong> to register
+                                the bus in the system.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-bus faq-icon"></i>
+
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+
+                        <div class="faq-number">
+                            02
+                        </div>
+
+                        <div class="faq-content">
+
+                            <h3>
+                                How do I create a route?
+                            </h3>
+
+                            <p>
+                                Open <strong>Route Management</strong>,
+                                enter the required route information
+                                and save the route to make it available
+                                for scheduling.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-route faq-icon"></i>
+
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+
+                        <div class="faq-number">
+                            03
+                        </div>
+
+                        <div class="faq-content">
+
+                            <h3>
+                                How do I create a schedule?
+                            </h3>
+
+                            <p>
+                                Navigate to
+                                <strong>Schedule Management</strong>,
+                                select the appropriate route and bus,
+                                enter the departure date and time,
+                                then save the schedule.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-calendar-days faq-icon"></i>
+
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+
+                        <div class="faq-number">
+                            04
+                        </div>
+
+                        <div class="faq-content">
+
+                            <h3>
+                                How do passengers book tickets?
+                            </h3>
+
+                            <p>
+                                Passengers select their state, choose
+                                an available bus and route, provide
+                                their required details and complete
+                                the booking process.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-ticket faq-icon"></i>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+
+                        <div class="faq-number">
+                            05
+                        </div>
+
+                        <div class="faq-content">
+
+                            <h3>
+                                How do I restore a backup?
+                            </h3>
+
+                            <p>
+                                Open <strong>Backup & Restore</strong>,
+                                select the appropriate backup file
+                                and click <strong>Restore</strong>
+                                to recover the saved system data.
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-database faq-icon"></i>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 SUPPORT SECTION
+            ========================================== -->
+            <section class="support-card">
+
+                <div class="support-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div class="support-content">
+
+                    <span>NEED MORE HELP?</span>
+
+                    <h2>Contact System Support</h2>
+
+                    <p>
+                        For technical assistance or problems using
+                        the system, contact the system administrator
+                        or your project supervisor.
+                    </p>
+
+                    <div class="support-details">
+
+                        <div class="support-detail">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+                                <small>Email</small>
+                                <strong>support@agetransit.com</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="support-detail">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <div>
+                                <small>Phone</small>
+                                <strong>+234 XXX XXX XXXX</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="support-decoration">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+            </section>
+
+
+            <!-- =========================================
+                 SYSTEM INFO
+            ========================================== -->
+            <section class="system-info">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>System Guide</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Platform</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>24/7 Access</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <span>BTMS 2026</span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <p>
+            &copy; 2026  AGE TRANSIT COMPANY
+            All rights reserved.
+        </p>
+    </footer>
+
+<script type="module" src="js/script.js"></script>
+    
+
+</body>
+
+</html>

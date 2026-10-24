@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="assets/images/ATC.jpg">
+
+    <title>AGE TRANSIT COMPANY</title>
+
+    <!-- Schedule-specific CSS -->
+    <link rel="stylesheet" href="css/schedules.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <img src="assets/images/ATC.jpg" alt="Age-Logo">
+                </div>
+
+                <div>
+                    <h2>ATC</h2>
+                    <span>Terminal Management</span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu-title">
+                MANAGEMENT
+            </div>
+
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="buses.html">
+                        <i class="fa-solid fa-bus"></i>
+                        <span>Buses</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="routes.html">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Routes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="schedules.html" class="active">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Schedules</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bookinghistory.html">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="platform.html">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Platform</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="staff.html">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Staffs</span>
+                    </a>
+                </li>
+
+                <div class="sidebar-menu-title second">
+                    OPERATIONS
+                </div>
+
+                <li>
+                    <a href="ticket.html">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="reports.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-bottom">
+                <a href="#" onclick="logout()" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="manager-help.html">
+                        <span class="settings-item-text">Help?</span>
+
+                    </a>
+                </li>
+            </ul>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+            <header class="dashboard-header">
+
+                <div class="header-title">
+                    <div class="page-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <span class="breadcrumb">Management / Schedules</span>
+                        <h1>Schedule Management</h1>
+                    </div>
+                </div>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Admin</strong>
+                        <span>System Administrator</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+
+            </header>
+
+
+            <!-- ================= WELCOME BANNER ================= -->
+            <section class="schedule-banner">
+
+                <div class="banner-content">
+
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <span class="banner-label">TRANSPORT OPERATIONS</span>
+
+                        <h2>Manage Your Travel Schedule</h2>
+
+                        <p>
+                            Create, monitor and manage bus departure schedules
+                            across the terminal.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="banner-decoration">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+
+            </section>
+
+
+            <!-- ================= STAT CARD ================= -->
+            <section class="schedule-overview">
+
+                <div class="overview-card">
+
+                    <div class="overview-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="overview-info">
+                        <span>Total Schedules</span>
+                        <strong id="totalSchedules">0</strong>
+                        <small>
+                            <i class="fa-solid fa-circle-check"></i>
+                            Registered schedules
+                        </small>
+                    </div>
+
+                    <div class="overview-pattern">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD SCHEDULE ================= -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="heading-left">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+
+                        <div>
+                            <span class="section-label">SCHEDULE SETUP</span>
+                            <h2>Create New Schedule</h2>
+                            <p>
+                                Assign a bus to a route and specify its departure time and arrival times.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-status">
+                        <i class="fa-solid fa-circle"></i>
+                        Active Module
+                    </div>
+
+                </div>
+
+
+                <form action="" id="scheduleForm">
+
+                    <div class="form-grid">
+
+                        <!-- State -->
+                        <div class="input-group">
+
+                            <label for="scheduleState">
+                                <i class="fa-solid fa-location-dot"></i>
+                                State
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-map"></i>
+
+                                <select id="scheduleState">
+                                    <option value="">Select State</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Bus -->
+                        <div class="input-group">
+
+                            <label for="busNumber">
+                                <i class="fa-solid fa-bus"></i>
+                                Bus Number
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-bus-simple"></i>
+
+                                <select id="busNumber" required>
+                                    <option value="">Select Bus</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Route -->
+                        <div class="input-group">
+
+                            <label for="routeName">
+                                <i class="fa-solid fa-route"></i>
+                                Route
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-road"></i>
+
+                                <select id="routeName" required>
+                                    <option value="">Select Route</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Date -->
+                        <div class="input-group">
+
+                            <label for="departureDate">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                Departure Date
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-calendar"></i>
+
+                                <input type="date" id="departureDate" required>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Time -->
+                        <div class="input-group">
+
+                            <label for="departureTime">
+                                <i class="fa-solid fa-clock"></i>
+                                Departure Time
+                            </label>
+
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-clock"></i>
+
+                                <input type="time" id="departureTime" required>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Expected Arrival Date -->
+                    <div class="input-group">
+
+                        <label for="expectedArrivalDate">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Expected Arrival Date
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            <input type="date" id="expectedArrivalDate" required>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Expected Arrival Time -->
+                    <div class="input-group">
+
+                        <label for="expectedArrivalTime">
+                            <i class="fa-solid fa-clock"></i>
+                            Expected Arrival Time
+                        </label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-clock"></i>
+
+                            <input type="time" id="expectedArrivalTime" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-footer">
+
+                        <div class="form-note">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>
+                                Ensure the selected bus and route are available
+                                and provide an accurate expected arrival time.
+                            </span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                            Add Schedule
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= SCHEDULE TABLE ================= -->
+            <section class="schedule-directory">
+
+                <div class="directory-header">
+
+                    <div class="directory-title">
+
+                        <div class="directory-icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+
+                        <div>
+                            <span class="section-label">SCHEDULE DIRECTORY</span>
+                            <h2>Available Schedules</h2>
+                            <p>
+                                View and manage scheduled bus departures.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-status-guide">
+
+                        <span>
+                            <i class="status-dot scheduled"></i>
+                            Scheduled
+                        </span>
+
+                        <span>
+                            <i class="status-dot boarding"></i>
+                            Boarding
+                        </span>
+
+                        <span>
+                            <i class="status-dot delayed"></i>
+                            Delayed
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Search -->
+                <div class="table-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input type="text" id="searchSchedule" placeholder="Search schedule, bus or route...">
+
+                    </div>
+
+                    <div class="toolbar-info">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Schedule Records
+                    </div>
+
+                </div>
+
+
+                <!-- Table -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>State</th>
+                                <th>Bus Number</th>
+                                <th>Route</th>
+                                <th>Departure Date</th>
+                                <th>Departure Time</th>
+                                <th>Expected Arrival</th>
+                                <th>Status</th>
+                                <th>Date/Time</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="scheduleTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="table-footer">
+
+                    <div>
+                        <i class="fa-solid fa-circle-info"></i>
+                        Schedule information is updated automatically.
+                    </div>
+
+                    <span>
+                        BTMS Schedule Management
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>
+            &copy; 2026 AGE TRANSIT COMPANY
+            <span>•</span>
+            Schedule Management
+        </p>
+    </footer>
+
+<script type="module" src="js/script.js"></script>
+</body>
+
+</html>

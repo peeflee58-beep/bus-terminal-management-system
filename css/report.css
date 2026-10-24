@@ -1,0 +1,1392 @@
+/* ==========================================
+   BTMS REPORTS PAGE
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #061a33;
+    --navy-light: #0b2b4d;
+    --blue: #124875;
+    --gold: #d4a72c;
+    --gold-light: #f1d477;
+
+    --white: #ffffff;
+    --background: #f4f7fb;
+    --text: #172033;
+    --muted: #718096;
+
+    --border: #e2e8f0;
+
+    --green: #16805c;
+    --green-bg: #eaf8f2;
+
+    --yellow: #c28b08;
+    --yellow-bg: #fff8df;
+
+    --red: #c43d4b;
+    --red-bg: #fff0f1;
+
+    --blue-status: #2876b8;
+    --blue-bg: #edf6fd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* ==========================================
+   DASHBOARD LAYOUT
+   ========================================== */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.sidebar {
+    width: 255px;
+    min-width: 255px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--navy),
+            #081f39
+        );
+
+    color: white;
+
+    padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    box-shadow:
+        5px 0 25px rgba(6, 26, 51, 0.10);
+}
+
+
+/* Brand */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 12px 28px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(212, 167, 44, 0.14);
+
+    color: var(--gold-light);
+
+    font-size: 19px;
+}
+
+.brand-icon img{
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.sidebar-brand h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.sidebar-brand span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* Menu */
+
+.menu-title {
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    padding: 25px 13px 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.sidebar li a,
+.logout-link {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    border-radius: 9px;
+
+    color: rgba(255, 255, 255, 0.67);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.25s ease;
+}
+
+.sidebar li a i,
+.logout-link i {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.sidebar li a:hover,
+.logout-link:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    color: white;
+
+    transform: translateX(2px);
+}
+
+.sidebar li a.active {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212, 167, 44, 0.20),
+            rgba(212, 167, 44, 0.07)
+        );
+
+    color: white;
+
+    border-left: 3px solid var(--gold);
+}
+
+.sidebar li a.active i {
+    color: var(--gold-light);
+}
+
+
+/* Sidebar bottom */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logout-link:hover {
+    color: #ffb4b4;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+
+.main-content {
+    width: calc(100% - 255px);
+
+    margin-left: 255px;
+
+    padding: 35px 40px 55px;
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.page-label {
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.header-title h1 {
+    color: var(--navy);
+
+    font-size: 30px;
+
+    margin: 5px 0;
+}
+
+.header-title p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* Admin */
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 9px 13px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 18px rgba(6, 26, 51, 0.05);
+}
+
+.admin-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--navy);
+
+    color: var(--gold-light);
+}
+
+.admin-profile strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 12px;
+}
+
+.admin-profile span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* ==========================================
+   REPORT TOOLBAR
+   ========================================== */
+
+.report-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+
+    padding: 20px 22px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--navy),
+            var(--navy-light)
+        );
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 12px 28px rgba(6, 26, 51, 0.13);
+}
+
+.toolbar-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.toolbar-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(212, 167, 44, 0.14);
+
+    color: var(--gold-light);
+}
+
+.toolbar-info h3 {
+    color: white;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.toolbar-info p {
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   ACTION BUTTONS
+   ========================================== */
+
+.report-action {
+    display: flex;
+    gap: 10px;
+}
+
+.report-action button {
+    border: none;
+
+    padding: 11px 16px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btn-print {
+    background: white;
+    color: var(--navy);
+}
+
+.btn-export {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.report-action button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================
+   REPORT SECTION
+   ========================================== */
+
+.report-section {
+    margin-bottom: 32px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 16px;
+}
+
+.section-number {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--navy);
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+
+    font-size: 17px;
+
+    margin-bottom: 2px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   FLEET CARDS
+   ========================================== */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 22px rgba(6, 26, 51, 0.045);
+}
+
+.report-stat {
+    min-height: 110px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    transition: 0.25s ease;
+}
+
+.report-stat:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 27px rgba(6, 26, 51, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+}
+
+.buses-card .stat-icon {
+    background: #edf5fc;
+    color: var(--blue);
+}
+
+.routes-card .stat-icon {
+    background: #f0efff;
+    color: #6557b7;
+}
+
+.schedules-card .stat-icon {
+    background: #fff7df;
+    color: var(--yellow);
+}
+
+.bookings-card .stat-icon {
+    background: #eaf8f2;
+    color: var(--green);
+}
+
+.stat-content span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.stat-content p {
+    color: var(--navy);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    margin-top: 4px;
+}
+
+
+/* ==========================================
+   SCHEDULE STATUS
+   ========================================== */
+
+.schedule-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+.status-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    min-height: 125px;
+}
+
+.status-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -25px;
+    bottom: -30px;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    opacity: 0.05;
+}
+
+.status-card span {
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-card strong {
+    display: block;
+
+    font-size: 29px;
+
+    margin-top: 10px;
+}
+
+.status-card small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+.scheduled-card {
+    color: var(--green);
+    border-top: 3px solid var(--green);
+}
+
+.boarding-card {
+    color: var(--blue-status);
+    border-top: 3px solid var(--blue-status);
+}
+
+.delayed-card {
+    color: var(--yellow);
+    border-top: 3px solid var(--yellow);
+}
+
+.departed-card {
+    color: var(--red);
+    border-top: 3px solid var(--red);
+}
+
+.pending-card {
+    color: #8a5560;
+    border-top: 3px solid #c43d4b;
+}
+
+
+/* ==========================================
+   STAFF + REVENUE
+   ========================================== */
+
+.section-summary {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 25px;
+}
+
+.section-summary .report-section {
+    min-width: 0;
+}
+
+.staff-report-card,
+.revenue-card {
+    padding: 23px;
+}
+
+
+/* Staff */
+
+.staff-total {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.large-stat-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #edf5fc;
+
+    color: var(--blue);
+
+    font-size: 20px;
+}
+
+.staff-total span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.staff-total h1 {
+    color: var(--navy);
+
+    font-size: 28px;
+
+    margin-top: 2px;
+}
+
+.staff-report-card hr,
+.revenue-card hr {
+    border: none;
+
+    border-top: 1px solid var(--border);
+
+    margin: 20px 0;
+}
+
+.staff-summary {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+}
+
+.staff-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    font-size: 11px;
+}
+
+.staff-row:last-child {
+    border-bottom: none;
+}
+
+.staff-row span {
+    color: #556274;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.staff-row span i {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #f3f6f9;
+
+    color: var(--blue);
+
+    font-size: 10px;
+}
+
+.staff-row strong {
+    color: var(--navy);
+}
+
+
+/* ==========================================
+   REVENUE
+   ========================================== */
+
+.revenue-header {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.revenue-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #eaf8f2;
+
+    color: var(--green);
+
+    font-size: 21px;
+}
+
+.revenue-header span {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.revenue-header h2 {
+    color: var(--navy);
+
+    font-size: 25px;
+
+    margin-top: 3px;
+}
+
+.revenue-stats {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.revenue-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+}
+
+.revenue-item > i {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+}
+
+.revenue-item div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.revenue-item span {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.revenue-item strong {
+    color: var(--navy);
+
+    font-size: 15px;
+}
+
+.paid-card > i {
+    background: var(--green-bg);
+    color: var(--green);
+}
+
+.revenue-item.pending-card > i {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+}
+
+.revenue-item.departed-card > i {
+    background: var(--red-bg);
+    color: var(--red);
+}
+
+
+/* ==========================================
+   SYSTEM SUMMARY TABLE
+   ========================================== */
+
+.system-summary-section {
+    margin-top: 5px;
+}
+
+.table-container {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 22px rgba(6, 26, 51, 0.045);
+}
+
+.table-container table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.table-container th {
+    padding: 15px 20px;
+
+    background: #f8fafc;
+
+    color: #667085;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    text-align: left;
+}
+
+.table-container th:last-child {
+    text-align: right;
+}
+
+.table-container td {
+    padding: 12px 20px;
+
+    border-top: 1px solid #edf0f3;
+
+    color: #475467;
+
+    font-size: 12px;
+}
+
+.table-container td:last-child {
+    text-align: right;
+
+    color: var(--navy);
+
+    font-weight: 800;
+}
+
+.table-container tbody tr {
+    transition: 0.2s ease;
+}
+
+.table-container tbody tr:hover {
+    background: #fafbfd;
+}
+
+.table-container td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.module-icon {
+    width: 29px;
+    height: 29px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+}
+
+.module-icon.bus {
+    background: #edf5fc;
+    color: var(--blue);
+}
+
+.module-icon.route {
+    background: #f0efff;
+    color: #6557b7;
+}
+
+.module-icon.schedule {
+    background: #fff7df;
+    color: var(--yellow);
+}
+
+.module-icon.boarding {
+    background: #edf6fd;
+    color: var(--blue-status);
+}
+
+.module-icon.delayed {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+}
+
+.module-icon.departed {
+    background: #fff0f1;
+    color: var(--red);
+}
+
+.module-icon.cancelled {
+    background: #fff0f1;
+    color: var(--red);
+}
+
+.module-icon.booking {
+    background: #eaf8f2;
+    color: var(--green);
+}
+
+.module-icon.paid {
+    background: #eaf8f2;
+    color: var(--green);
+}
+
+.module-icon.pending {
+    background: #fff7df;
+    color: var(--yellow);
+}
+
+.module-icon.expired {
+    background: #f1f3f5;
+    color: #64748b;
+}
+
+.module-icon.passenger {
+    background: #f0efff;
+    color: #6557b7;
+}
+
+.module-icon.staff {
+    background: #edf5fc;
+    color: var(--blue);
+}
+
+
+/* ==========================================
+   SIGNATURE
+   ========================================== */
+
+.report-signature {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    margin-top: 40px;
+
+    padding: 20px 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.signature-box {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-width: 200px;
+}
+
+.signature-line {
+    width: 220px;
+
+    border-top: 1px solid #8c96a3;
+
+    margin-bottom: 8px;
+}
+
+.signature-box strong {
+    color: var(--navy);
+
+    font-size: 11px;
+}
+
+.signature-box span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   REPORT FOOTER
+   ========================================== */
+
+.report-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: #8b95a5;
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+.report-footer i {
+    color: var(--gold);
+}
+
+.footer-divider {
+    color: var(--gold);
+}
+
+
+/* ==========================================
+   PAGE FOOTER
+   ========================================== */
+
+body > footer {
+    display: none;
+}
+
+
+/* ==========================================
+   RESPONSIVE - 1200PX
+   ========================================== */
+
+@media (max-width: 1200px) {
+
+    .main-content {
+        padding: 30px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE - 900PX
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+
+    .main-content {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+
+        padding: 25px 20px;
+    }
+
+    .section-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .report-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report-action {
+        width: 100%;
+    }
+
+    .report-action button {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE - 700PX
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        min-width: 100%;
+
+        height: auto;
+
+        padding: 15px;
+
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+
+        padding: 20px 15px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .admin-profile {
+        width: 100%;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .report-signature {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 20px;
+    }
+
+    .report-footer {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE - 480PX
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 18px 11px;
+    }
+
+    .header-title h1 {
+        font-size: 24px;
+    }
+
+    .header-title p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .report-toolbar {
+        padding: 17px;
+
+        border-radius: 14px;
+    }
+
+    .toolbar-info {
+        align-items: flex-start;
+    }
+
+    .toolbar-info h3 {
+        font-size: 12px;
+    }
+
+    .toolbar-info p {
+        line-height: 1.5;
+    }
+
+    .report-action {
+        flex-direction: column;
+    }
+
+    .report-action button {
+        width: 100%;
+    }
+
+    .section-heading h2 {
+        font-size: 15px;
+    }
+
+    .section-heading p {
+        line-height: 1.5;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .status-card {
+        padding: 16px;
+
+        min-height: 110px;
+    }
+
+    .status-card strong {
+        font-size: 24px;
+    }
+
+    .staff-report-card,
+    .revenue-card {
+        padding: 17px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .table-container table {
+        min-width: 500px;
+    }
+
+    .report-signature {
+        gap: 25px;
+    }
+
+    .signature-line {
+        width: 190px;
+    }
+
+    .report-footer {
+        line-height: 1.7;
+    }
+}
